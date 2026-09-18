@@ -290,6 +290,12 @@
   }
 
   .src a { color:var(--accent); text-decoration:none; } .src a:hover { text-decoration:underline; }
+
+  .drug-ex { color: var(--text-muted); font-weight: 500; font-size: .94em; }
+  .quick-index { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px; margin:10px 0; }
+  .quick-index button { text-align:left; background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:8px 10px; color:var(--text); cursor:pointer; font-size:12px; line-height:1.35; }
+  .quick-index button:hover { border-color:var(--accent); color:var(--accent-dark); background:var(--accent-pale); }
+  .rapid-note { color:var(--text-muted); font-size:12.2px; margin:8px 0 12px; }
 </style>
 </head><body>
 <div class="header">
@@ -329,7 +335,6 @@
 <button class="nb" onclick="show('tasks', this)">Physician Tasks / OMM</button>
 <button class="nb" onclick="show('traps', this)">Board Traps</button>
 <button class="nb" onclick="show('rapid', this)">Rapid Review</button>
-<button class="nb" onclick="show('crampath', this)">3-Hour Cram Path</button>
 </div>
 <main>
 <div class="sec show" id="overview">
@@ -353,7 +358,7 @@
 <div class="bp-item" style="flex:0.7"><strong>HEENT</strong>5-7%<div class="bp-bar" style="width:50%;background:var(--dot-blue)"></div></div>
 <div class="bp-item" style="flex:0.7"><strong>Public Health/Special Pop</strong>5-7%<div class="bp-bar" style="width:50%;background:var(--dot-blue)"></div></div>
 </div>
-<div class="card">
+<div class="kp"><span class="kp-label">Organization rule</span>Detailed content now lives in <strong>one primary system tab</strong> whenever possible. Cross-system tabs use only short pointers; use the search bar to jump to the primary card instead of maintaining 3–4 copies of the same concept.</div><div class="card">
 <div class="card-title"><span class="dot dot-blue"></span>The One Algorithm That Solves Half the Test <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="flow"><div class="flow-step">Is the patient stable?</div></div>
 <div class="grid2">
@@ -518,15 +523,8 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-rose"></span>Acute Coronary Syndrome (STEMI/NSTEMI/UA) <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">STEMI</div><div class="dxf"><span class="dxl">Mechanism / why</span><strong>Atherosclerotic plaque rupture → platelet activation + acute coronary thrombosis</strong> → transmural ischemia when flow is fully occluded.</div><div class="dxf"><span class="dxl">Second-order</span>Watch for <u>papillary-muscle rupture, VSD, free-wall rupture, ventricular arrhythmia, or cardiogenic shock</u> after MI; the timing + new murmur/hemodynamic change is often the tested clue.</div>
-<div class="dxf"><span class="dxl">Recognize</span>Substernal pressure ± radiation, diaphoresis; <strong>ST elevation ≥1mm in ≥2 contiguous leads</strong></div>
-<div class="dxf test"><span class="dxl">Best initial test</span><strong>EKG within 10 minutes</strong> of arrival → troponin</div>
-<div class="dxf tx"><span class="dxl">Best initial step</span>Aspirin (chew) + O2 if hypoxic + <strong>P2Y12 inhibitor</strong> + heparin</div>
-<div class="dxf tx"><span class="dxl">Definitive treatment</span><strong><u>PCI &lt;90 min</u></strong> (door-to-balloon) or <u>fibrinolysis &lt;30 min</u> if PCI unavailable/&gt;120min transfer</div>
-<div class="dxf warn"><span class="dxl">Contraindication</span>Fibrinolysis <strong><u>absolute</u></strong>: prior ICH, ischemic stroke &lt;3mo, active bleeding, suspected aortic dissection, severe uncontrolled HTN not responding to tx. <u>Relative</u>: BP&gt;180/110, recent major surgery/GI bleed &lt;3wk, current anticoagulation — <strong>prefer PCI</strong> when any of these are present</div>
-<div class="dxf warn"><span class="dxl">Do NOT</span>Nitrates/diuretics/opioids <strong><u>if RV infarct</u></strong> (inferior MI, right-sided ST elevation) — <u>preload-dependent</u>, will crash BP; give <strong>IV fluids</strong> instead</div>
-<div class="dxf"><span class="dxl">Complication to anticipate</span>See STEMI timing table below for rupture/arrhythmia risk by day</div>
-</div>
+<div class="dxcard-name">STEMI</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span><strong>Atherosclerotic plaque rupture → platelet activation + acute coronary thrombosis</strong> → transmural ischemia when flow is fully occluded.</div><div class="dxf"><span class="dxl">Recognize</span>Substernal pressure ± radiation, diaphoresis; <strong>ST elevation ≥1mm in ≥2 contiguous leads</strong></div><div class="dxf tx"><span class="dxl">Best initial step</span>Aspirin (chew) + O2 if hypoxic + <strong>P2Y12 inhibitor</strong> + heparin</div><div class="dxf test"><span class="dxl">Best initial test</span><strong>EKG within 10 minutes</strong> of arrival → troponin</div><div class="dxf tx"><span class="dxl">Definitive treatment</span><strong><u>PCI &lt;90 min</u></strong> (door-to-balloon) or <u>fibrinolysis &lt;30 min</u> if PCI unavailable/&gt;120min transfer</div><div class="dxf"><span class="dxl">Second-order</span>Watch for <u>papillary-muscle rupture, VSD, free-wall rupture, ventricular arrhythmia, or cardiogenic shock</u> after MI; the timing + new murmur/hemodynamic change is often the tested clue.</div><div class="dxf"><span class="dxl">Complication to anticipate</span>See STEMI timing table below for rupture/arrhythmia risk by day</div><div class="dxf warn"><span class="dxl">Contraindication</span>Fibrinolysis <strong><u>absolute</u></strong>: prior ICH, ischemic stroke &lt;3mo, active bleeding, suspected aortic dissection, severe uncontrolled HTN not responding to tx. <u>Relative</u>: BP&gt;180/110, recent major surgery/GI bleed &lt;3wk, current anticoagulation — <strong>prefer PCI</strong> when any of these are present</div><div class="dxf warn"><span class="dxl">Do NOT</span>Nitrates/diuretics/opioids<span class="drug-ex"> (e.g., morphine, oxycodone, fentanyl)</span> <strong><u>if RV infarct</u></strong> (inferior MI, right-sided ST elevation) — <u>preload-dependent</u>, will crash BP; give <strong>IV fluids</strong> instead</div></div>
 <table>
 <tbody><tr><th>Suspected dx</th><th>Best next step</th><th>Definitive management</th></tr>
 <tr><td>Aortic dissection</td><td>see dedicated card below</td><td>see dedicated card below</td></tr>
@@ -540,15 +538,8 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-teal"></span>Aortic Dissection <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Aortic dissection</div><div class="dxf"><span class="dxl">Mechanism / why</span><strong>Intimal tear lets blood enter the media → false lumen</strong>; branch-vessel obstruction explains pulse/BP asymmetry and end-organ ischemia.</div><div class="dxf"><span class="dxl">Second-order</span>Proximal extension can cause <u>acute aortic regurgitation, coronary ischemia, or tamponade</u>. Type A disease generally requires emergent surgery.</div>
-<div class="dxf"><span class="dxl">Stem clues / setup</span><strong>Uncontrolled HTN</strong> (most common risk factor), <u>Marfan/Ehlers-Danlos, bicuspid aortic valve, cocaine use, pregnancy (3rd trimester), prior cardiac surgery</u></div>
-<div class="dxf"><span class="dxl">Recognize</span><strong>Tearing/ripping</strong> chest/back pain, <u>unequal BP or pulses between limbs</u>, widened mediastinum on CXR</div>
-<div class="dxf test"><span class="dxl">Best initial test</span>CXR (widened mediastinum) + EKG (rule out MI mimic)</div>
-<div class="dxf test"><span class="dxl">Best/confirmatory test</span><strong>CTA chest/abdomen</strong> (stable); <u>TEE</u> if renal disease or too unstable to leave the ED</div>
-<div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>HR/BP control FIRST</u></strong> — esmolol (rate) before nitroprusside (pressure); never vasodilate before rate control (reflex tachycardia worsens shear)</div>
-<div class="dxf tx"><span class="dxl">Definitive treatment</span><strong>Stanford A</strong> (ascending) → emergent surgery. <strong>Stanford B</strong> (descending) → medical management unless malperfusion/rupture</div>
-<div class="dxf warn"><span class="dxl">Board trap</span><u>Do not anticoagulate</u> — this is a surgical/BP-control disease, not a clotting disease (unlike ACS/PE)</div>
-</div>
+<div class="dxcard-name">Aortic dissection</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span><strong>Intimal tear lets blood enter the media → false lumen</strong>; branch-vessel obstruction explains pulse/BP asymmetry and end-organ ischemia.</div><div class="dxf"><span class="dxl">Stem clues / setup</span><strong>Uncontrolled HTN</strong> (most common risk factor), <u>Marfan/Ehlers-Danlos, bicuspid aortic valve, cocaine use, pregnancy (3rd trimester), prior cardiac surgery</u></div><div class="dxf"><span class="dxl">Recognize</span><strong>Tearing/ripping</strong> chest/back pain, <u>unequal BP or pulses between limbs</u>, widened mediastinum on CXR</div><div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>HR/BP control FIRST</u></strong> — esmolol (rate) before nitroprusside (pressure); never vasodilate before rate control (reflex tachycardia worsens shear)</div><div class="dxf test"><span class="dxl">Best initial test</span>CXR (widened mediastinum) + EKG (rule out MI mimic)</div><div class="dxf test"><span class="dxl">Best/confirmatory test</span><strong>CTA chest/abdomen</strong> (stable); <u>TEE</u> if renal disease or too unstable to leave the ED</div><div class="dxf tx"><span class="dxl">Definitive treatment</span><strong>Stanford A</strong> (ascending) → emergent surgery. <strong>Stanford B</strong> (descending) → medical management unless malperfusion/rupture</div><div class="dxf"><span class="dxl">Second-order</span>Proximal extension can cause <u>acute aortic regurgitation, coronary ischemia, or tamponade</u>. Type A disease generally requires emergent surgery.</div><div class="dxf warn"><span class="dxl">Board trap</span><u>Do not anticoagulate</u> — this is a surgical/BP-control disease, not a clotting disease (unlike ACS/PE)</div></div>
 </div>
 <div class="card">
 <div class="card-title"><span class="dot dot-blue"></span>STEMI Localization &amp; Post-MI Complications</div>
@@ -586,7 +577,7 @@
 <div class="dxcard-name">WPW (Wolff-Parkinson-White)</div>
 <div class="dxf"><span class="dxl">Mechanism / why</span><strong>Accessory atrioventricular pathway (bundle of Kent)</strong> bypasses the AV node → <u>ventricular pre-excitation</u>. The delta wave is the slurred early upstroke from premature ventricular activation.</div>
 <div class="dxf"><span class="dxl">Recognize</span><strong>Short PR + delta wave + widened QRS</strong> at baseline; AFib with WPW = <u>irregular, very rapid, wide-complex rhythm</u></div>
-<div class="dxf warn"><span class="dxl">Do NOT</span><strong><u>Do NOT give AV nodal blockers</u></strong> (adenosine, verapamil/diltiazem, beta blockers, digoxin) in <strong>pre-excited AF</strong> — blocking the AV node favors conduction down the accessory pathway and can <strong><u>precipitate VF</u></strong></div>
+<div class="dxf warn"><span class="dxl">Do NOT</span><strong><u>Do NOT give AV nodal blockers</u></strong> (adenosine, verapamil/diltiazem, beta blockers<span class="drug-ex"> (e.g., metoprolol, propranolol, labetalol)</span>, digoxin) in <strong>pre-excited AF</strong> — blocking the AV node favors conduction down the accessory pathway and can <strong><u>precipitate VF</u></strong></div>
 <div class="dxf tx"><span class="dxl">Management</span>Stable pre-excited AF: <strong>procainamide or ibutilide</strong>. Unstable: <strong>synchronized cardioversion</strong>. Recurrent symptomatic WPW → catheter ablation.</div>
 </div>
 </div>
@@ -629,12 +620,20 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-slate"></span>AAA <span class="tag tag-hy">HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Abdominal aortic aneurysm (ruptured)</div><div class="dxf"><span class="dxl">Mechanism / why</span>Degeneration of the aortic media with progressive dilation; rupture causes <strong>retroperitoneal/intraperitoneal hemorrhagic shock</strong>.</div><div class="dxf"><span class="dxl">Second-order</span>Classic triad is abdominal/back pain + hypotension + pulsatile mass, but <u>absence of the full triad does not exclude rupture</u>.</div>
-<div class="dxf"><span class="dxl">Recognize</span>Classic triad: <strong>hypotension + abdominal/back pain + pulsatile mass</strong> — age &gt;65, smoker, male</div>
-<div class="dxf test"><span class="dxl">Best initial test</span>Bedside US (fast, sensitive for aneurysm presence)</div>
-<div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Straight to OR if ruptured/unstable</u></strong> — don't delay for CT</div>
-<div class="dxf img"><span class="dxl">Best imaging (stable)</span>CT angiography defines anatomy for repair planning</div>
+<div class="dxcard-name">Abdominal aortic aneurysm (ruptured)</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Degeneration of the aortic media with progressive dilation; rupture causes <strong>retroperitoneal/intraperitoneal hemorrhagic shock</strong>.</div><div class="dxf"><span class="dxl">Recognize</span>Classic triad: <strong>hypotension + abdominal/back pain + pulsatile mass</strong> — age &gt;65, smoker, male</div><div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Straight to OR if ruptured/unstable</u></strong> — don't delay for CT</div><div class="dxf test"><span class="dxl">Best initial test</span>Bedside US (fast, sensitive for aneurysm presence)</div><div class="dxf img"><span class="dxl">Best imaging (stable)</span>CT angiography defines anatomy for repair planning</div><div class="dxf"><span class="dxl">Second-order</span>Classic triad is abdominal/back pain + hypotension + pulsatile mass, but <u>absence of the full triad does not exclude rupture</u>.</div></div>
+</div><div class="card">
+<div class="card-title"><span class="dot dot-teal"></span>Peripheral Artery Disease &amp; Claudication <span class="tag tag-hy">HIGH YIELD</span></div>
+<div class="dxcard">
+<div class="dxcard-name">Chronic symptomatic PAD / intermittent claudication</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Atherosclerotic narrowing limits flow during exertion → <strong>reproducible muscle ischemia with walking</strong> that resolves when demand falls.</div>
+<div class="dxf"><span class="dxl">Recognize</span><strong><u>Exertional calf/thigh/buttock pain relieved by rest</u></strong>, diminished pulses, cool/shiny skin, hair loss; compare with neurogenic claudication, which improves with <u>sitting/flexion</u>, not rest alone.</div>
+<div class="dxf test"><span class="dxl">Best initial diagnostic test</span><strong>Ankle-brachial index (ABI)</strong>; <u>≤0.90 supports PAD</u>. If symptoms are classic but resting ABI is normal/borderline, obtain <strong>exercise ABI</strong>.</div>
+<div class="dxf tx"><span class="dxl">Initial management</span><strong>Smoking cessation + high-intensity statin + antiplatelet therapy + structured/supervised exercise</strong>; optimize diabetes/BP. <strong>Cilostazol</strong> can improve walking distance but <u>avoid in heart failure</u>.</div>
+<div class="dxf tx"><span class="dxl">Best next step if lifestyle-limiting despite therapy</span>Obtain anatomic imaging for planning and consider <strong>revascularization</strong> if symptoms remain functionally limiting despite guideline-directed therapy + structured exercise.</div>
+<div class="dxf warn"><span class="dxl">Escalation / limb threat</span><strong><u>Rest pain, nonhealing ulcers, or gangrene = chronic limb-threatening ischemia</u></strong> → urgent vascular evaluation/revascularization. Sudden 6-P ischemia is <strong>acute limb ischemia</strong> and an emergency.</div>
 </div>
+<div class="src"><strong>Verified:</strong> 2024 ACC/AHA multisociety lower-extremity PAD guideline.</div>
 </div>
 <div class="card">
 <div class="card-title"><span class="dot dot-rose"></span>Hypertensive Emergency vs Severe Asymptomatic Hypertension <span class="tag tag-hy">HIGH YIELD</span></div>
@@ -674,17 +673,11 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-rose"></span>Biliary Emergencies <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Acute cholecystitis</div><div class="dxf"><span class="dxl">Mechanism / why</span><strong>Cystic-duct obstruction</strong> (usually a stone) → gallbladder distention/inflammation; this is why pain localizes to RUQ and Murphy sign is useful.</div><div class="dxf"><span class="dxl">Second-order</span>Persistent obstruction can progress to <u>gangrene, perforation, or emphysematous cholecystitis</u>, especially in older/diabetic patients.</div>
-<div class="dxf"><span class="dxl">Recognize</span>RUQ pain + fever, <u>positive Murphy sign</u> (pain/inspiratory arrest on RUQ palpation), "4 F's" (female, forty, fertile, fat)</div>
-<div class="dxf test"><span class="dxl">Best initial/confirmatory test</span><strong>RUQ ultrasound</strong> (gallstones, wall thickening &gt;3mm, pericholecystic fluid); <u>HIDA scan</u> if US equivocal</div>
-<div class="dxf tx"><span class="dxl">Management</span>NPO, IV fluids, abx → <strong>cholecystectomy &lt;72h</strong></div>
-</div>
+<div class="dxcard-name">Acute cholecystitis</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span><strong>Cystic-duct obstruction</strong> (usually a stone) → gallbladder distention/inflammation; this is why pain localizes to RUQ and Murphy sign is useful.</div><div class="dxf"><span class="dxl">Recognize</span>RUQ pain + fever, <u>positive Murphy sign</u> (pain/inspiratory arrest on RUQ palpation), "4 F's" (female, forty, fertile, fat)</div><div class="dxf test"><span class="dxl">Best initial/confirmatory test</span><strong>RUQ ultrasound</strong> (gallstones, wall thickening &gt;3mm, pericholecystic fluid); <u>HIDA scan</u> if US equivocal</div><div class="dxf tx"><span class="dxl">Management</span>NPO, IV fluids, abx → <strong>cholecystectomy &lt;72h</strong></div><div class="dxf"><span class="dxl">Second-order</span>Persistent obstruction can progress to <u>gangrene, perforation, or emphysematous cholecystitis</u>, especially in older/diabetic patients.</div></div>
 <div class="dxcard">
-<div class="dxcard-name">Ascending cholangitis</div><div class="dxf"><span class="dxl">Mechanism / why</span><strong>Infected, obstructed common bile duct</strong> → ascending bacterial infection + biliary sepsis.</div><div class="dxf"><span class="dxl">Second-order</span><u>Charcot triad</u> = fever + jaundice + RUQ pain; hypotension + AMS completes Reynolds pentad. Definitive source control is <strong>urgent ERCP</strong>.</div>
-<div class="dxf"><span class="dxl">Recognize</span>Charcot triad<span class="eponym"> — fever + jaundice + RUQ pain</span>; add <strong>AMS + hypotension</strong> = <u>Reynolds pentad</u> (more severe, higher mortality)</div>
-<div class="dxf tx"><span class="dxl">Best initial step</span><strong>IV antibiotics</strong> + fluid resuscitation</div>
-<div class="dxf tx"><span class="dxl">Definitive treatment</span><strong><u>Emergent ERCP</u></strong> for biliary decompression — this cannot wait</div>
-</div>
+<div class="dxcard-name">Ascending cholangitis</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span><strong>Infected, obstructed common bile duct</strong> → ascending bacterial infection + biliary sepsis.</div><div class="dxf"><span class="dxl">Recognize</span>Charcot triad<span class="eponym"> — fever + jaundice + RUQ pain</span>; add <strong>AMS + hypotension</strong> = <u>Reynolds pentad</u> (more severe, higher mortality)</div><div class="dxf tx"><span class="dxl">Best initial step</span><strong>IV antibiotics</strong> + fluid resuscitation</div><div class="dxf tx"><span class="dxl">Definitive treatment</span><strong><u>Emergent ERCP</u></strong> for biliary decompression — this cannot wait</div><div class="dxf"><span class="dxl">Second-order</span><u>Charcot triad</u> = fever + jaundice + RUQ pain; hypotension + AMS completes Reynolds pentad. Definitive source control is <strong>urgent ERCP</strong>.</div></div>
 <div class="sub">Biliary disease spectrum — cholecystitis vs choledocholithiasis vs cholangitis</div>
 <table>
 <tbody><tr><th></th><th>Cholecystitis</th><th>Choledocholithiasis</th><th>Cholangitis</th></tr>
@@ -705,18 +698,11 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-amber"></span>Appendicitis &amp; Mesenteric Ischemia <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Acute appendicitis</div><div class="dxf"><span class="dxl">Mechanism / why</span>Luminal obstruction → distention and visceral periumbilical pain; later parietal-peritoneal irritation causes <strong>migration to the RLQ</strong>.</div><div class="dxf"><span class="dxl">Second-order</span>Delay increases <u>perforation/abscess</u> risk; imaging choice changes with age/pregnancy rather than the underlying diagnosis.</div>
-<div class="dxf"><span class="dxl">Stem cue</span>Pain <strong>periumbilical → migrates to RLQ</strong> (McBurney's point), anorexia, low-grade fever, N/V after pain onset</div>
-<div class="dxf img"><span class="dxl">Context matters — imaging</span><strong>Adult, nonpregnant → CT abd/pelvis with contrast</strong> is the preferred initial/most accurate test (highest sensitivity/specificity). <strong>Pregnant or pediatric → graded compression ultrasound first</strong> to avoid radiation</div>
-<div class="dxf img"><span class="dxl">If ultrasound is nondiagnostic</span><u>Pediatric</u>: proceed to CT if suspicion remains high. <u>Pregnant</u>: <strong>MRI without contrast</strong> preferred over CT for further workup to avoid fetal radiation exposure</div>
-<div class="dxf tx"><span class="dxl">Definitive treatment</span>Appendectomy</div>
-</div>
+<div class="dxcard-name">Acute appendicitis</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Luminal obstruction → distention and visceral periumbilical pain; later parietal-peritoneal irritation causes <strong>migration to the RLQ</strong>.</div><div class="dxf img"><span class="dxl">Context matters — imaging</span><strong>Adult, nonpregnant → CT abd/pelvis with contrast</strong> is the preferred initial/most accurate test (highest sensitivity/specificity). <strong>Pregnant or pediatric → graded compression ultrasound first</strong> to avoid radiation</div><div class="dxf"><span class="dxl">Stem cue</span>Pain <strong>periumbilical → migrates to RLQ</strong> (McBurney's point), anorexia, low-grade fever, N/V after pain onset</div><div class="dxf img"><span class="dxl">If ultrasound is nondiagnostic</span><u>Pediatric</u>: proceed to CT if suspicion remains high. <u>Pregnant</u>: <strong>MRI without contrast</strong> preferred over CT for further workup to avoid fetal radiation exposure</div><div class="dxf tx"><span class="dxl">Definitive treatment</span>Appendectomy</div><div class="dxf"><span class="dxl">Second-order</span>Delay increases <u>perforation/abscess</u> risk; imaging choice changes with age/pregnancy rather than the underlying diagnosis.</div></div>
 <div class="dxcard">
-<div class="dxcard-name">Acute mesenteric ischemia</div><div class="dxf"><span class="dxl">Mechanism / why</span>Usually <strong>arterial embolus (often AF)</strong>, thrombosis, or low-flow ischemia → bowel hypoperfusion before peritoneal inflammation develops.</div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Pain out of proportion to exam</u></strong> is early; lactate may be normal initially. CTA is the key diagnostic study in a stable patient.</div>
-<div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Pain out of proportion to exam</u></strong> — classic buzzword; A fib/atherosclerosis history</div>
-<div class="dxf img"><span class="dxl">Best/confirmatory test</span><strong>CT angiography</strong>; look for <u>anion gap metabolic acidosis</u> (elevated lactate) as a supporting clue</div>
-<div class="dxf tx"><span class="dxl">Best initial step</span>Fluid resuscitation + broad-spectrum abx → <strong><u>emergent revascularization</u></strong> — this is a race against bowel necrosis</div>
-</div>
+<div class="dxcard-name">Acute mesenteric ischemia</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Usually <strong>arterial embolus (often AF)</strong>, thrombosis, or low-flow ischemia → bowel hypoperfusion before peritoneal inflammation develops.</div><div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Pain out of proportion to exam</u></strong> — classic buzzword; A fib/atherosclerosis history</div><div class="dxf tx"><span class="dxl">Best initial step</span>Fluid resuscitation + broad-spectrum abx → <strong><u>emergent revascularization</u></strong> — this is a race against bowel necrosis</div><div class="dxf img"><span class="dxl">Best/confirmatory test</span><strong>CT angiography</strong>; look for <u>anion gap metabolic acidosis</u> (elevated lactate) as a supporting clue</div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Pain out of proportion to exam</u></strong> is early; lactate may be normal initially. CTA is the key diagnostic study in a stable patient.</div></div>
 <div class="kp rose"><span class="kp-label">Board trap</span><strong><u>Rigid, board-like "quiet" abdomen = peritonitis until proven otherwise</u></strong> — surgery now, not more labs.</div>
 </div>
 <div class="card">
@@ -744,14 +730,8 @@
 <tr><td>Mallory-Weiss tear</td><td><u>Mucosal (partial-thickness)</u> tear, after retching; hematemesis, <u>usually self-limited</u> — no mediastinal contamination</td></tr>
 </tbody></table>
 <div class="dxcard">
-<div class="dxcard-name">Boerhaave syndrome</div><div class="dxf"><span class="dxl">Mechanism / why</span>Forceful emesis against a closed glottis → <strong>transmural esophageal rupture</strong> → mediastinal contamination/mediastinitis.</div><div class="dxf"><span class="dxl">Second-order</span>Subcutaneous emphysema, pleural effusion, pneumomediastinum, and rapid sepsis are classic downstream clues; this differs from a mucosal Mallory-Weiss tear.</div>
-<div class="dxf"><span class="dxl">Stem clues / setup</span><strong>Forceful vomiting/repeated retching</strong> — classically after an <u>alcohol binge or large meal</u></div>
-<div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Full-thickness (transmural) rupture</u></strong>, distal esophagus; sudden severe chest/upper abdominal pain, subcutaneous emphysema, pneumomediastinum. <u>Mackler triad</u> (vomiting + chest pain + subQ emphysema) when present, but <u>not always all three</u></div>
-<div class="dxf test"><span class="dxl">Best initial test</span>CXR/CT — pneumomediastinum, pleural effusion</div>
-<div class="dxf test"><span class="dxl">Best/confirmatory test</span><strong>Water-soluble contrast esophagram</strong> (e.g. Gastrografin) — if negative but suspicion remains high, <u>follow with CT esophagram</u> rather than barium (barium worsens mediastinitis if it leaks)</div>
-<div class="dxf tx"><span class="dxl">Management</span>NPO, IV fluids, <strong>broad-spectrum IV antibiotics</strong>, urgent surgical/thoracic consultation for repair</div>
-<div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Do not confuse with Mallory-Weiss tear</u></strong> — Mallory-Weiss is a mucosal tear with hematemesis and no perforation; Boerhaave is a surgical emergency with mediastinal contamination</div>
-</div>
+<div class="dxcard-name">Boerhaave syndrome</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Forceful emesis against a closed glottis → <strong>transmural esophageal rupture</strong> → mediastinal contamination/mediastinitis.</div><div class="dxf"><span class="dxl">Stem clues / setup</span><strong>Forceful vomiting/repeated retching</strong> — classically after an <u>alcohol binge or large meal</u></div><div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Full-thickness (transmural) rupture</u></strong>, distal esophagus; sudden severe chest/upper abdominal pain, subcutaneous emphysema, pneumomediastinum. <u>Mackler triad</u> (vomiting + chest pain + subQ emphysema) when present, but <u>not always all three</u></div><div class="dxf test"><span class="dxl">Best initial test</span>CXR/CT — pneumomediastinum, pleural effusion</div><div class="dxf test"><span class="dxl">Best/confirmatory test</span><strong>Water-soluble contrast esophagram</strong> (e.g. Gastrografin) — if negative but suspicion remains high, <u>follow with CT esophagram</u> rather than barium (barium worsens mediastinitis if it leaks)</div><div class="dxf tx"><span class="dxl">Management</span>NPO, IV fluids, <strong>broad-spectrum IV antibiotics</strong>, urgent surgical/thoracic consultation for repair</div><div class="dxf"><span class="dxl">Second-order</span>Subcutaneous emphysema, pleural effusion, pneumomediastinum, and rapid sepsis are classic downstream clues; this differs from a mucosal Mallory-Weiss tear.</div><div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Do not confuse with Mallory-Weiss tear</u></strong> — Mallory-Weiss is a mucosal tear with hematemesis and no perforation; Boerhaave is a surgical emergency with mediastinal contamination</div></div>
 <div class="kp"><span class="kp-label">Pearl</span>Caustic ingestion: acids → coagulative necrosis (less deep); alkalis → liquefactive necrosis (deeper, worse). <strong><u>Never induce vomiting or neutralize</u></strong> — get endoscopy.</div>
 </div>
 <div class="card">
@@ -776,7 +756,7 @@
 <table><tr><th>Dx</th><th>Recognize</th><th>Test / treatment</th><th>Trap</th></tr>
 <tr><td>Diverticulitis</td><td>LLQ pain, fever, bowel habit change</td><td><strong>CT abdomen/pelvis</strong> if diagnosis/complication uncertain; outpatient supportive care for selected mild uncomplicated cases; antibiotics selectively</td><td>Abscess, perforation, obstruction, sepsis → admit/intervene</td></tr>
 <tr><td>Ischemic colitis</td><td>Older/vascular risk; <strong>crampy pain then hematochezia</strong>, often watershed distribution</td><td>CT with IV contrast; supportive care ± antibiotics; surgery if peritonitis/gangrene</td><td>Usually less dramatic pain than acute mesenteric ischemia</td></tr>
-<tr><td>Toxic megacolon</td><td>IBD or C. difficile + systemic toxicity + colonic dilation</td><td>Resuscitate, stop antidiarrheals/opioids, IV steroids for severe IBD or treat C. diff; early surgery consult</td><td><strong><u>No colonoscopy/barium enema</u></strong> when fulminant dilation/perforation risk</td></tr></table>
+<tr><td>Toxic megacolon</td><td>IBD or C. difficile + systemic toxicity + colonic dilation</td><td>Resuscitate, stop antidiarrheals/opioids<span class="drug-ex"> (e.g., morphine, oxycodone, fentanyl)</span>, IV steroids for severe IBD or treat C. diff; early surgery consult</td><td><strong><u>No colonoscopy/barium enema</u></strong> when fulminant dilation/perforation risk</td></tr></table>
 <div class="src"><strong>Sources:</strong> ACG/AGA acute diverticulitis &amp; colitis guidance; IDSA/SHEA C. difficile guidance.</div>
 </div>
 <div class="card">
@@ -851,17 +831,11 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-amber"></span>Chest Trauma <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Tension pneumothorax</div><div class="dxf"><span class="dxl">Mechanism / why</span><strong>One-way air entry raises intrathoracic pressure</strong> → lung collapse + impaired venous return → <u>obstructive shock</u>.</div><div class="dxf"><span class="dxl">Second-order</span>This is a <strong>clinical diagnosis</strong> in an unstable patient: decompress first, then chest tube; do not wait for CXR.</div>
-<div class="dxf warn"><span class="dxl">Recognize</span><strong>JVD, tracheal deviation away, hypotension, absent breath sounds</strong> — this is a clinical diagnosis</div>
-<div class="dxf stab"><span class="dxl">Best initial step</span><strong><u><strong>Immediate</strong> needle decompression</u></strong> (2nd ICS midclavicular, or 5th ICS anterior axillary) — <u>never wait for CXR</u></div>
-<div class="dxf tx"><span class="dxl">Definitive treatment</span>Chest tube</div>
-</div>
+<div class="dxcard-name">Tension pneumothorax</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span><strong>One-way air entry raises intrathoracic pressure</strong> → lung collapse + impaired venous return → <u>obstructive shock</u>.</div><div class="dxf warn"><span class="dxl">Recognize</span><strong>JVD, tracheal deviation away, hypotension, absent breath sounds</strong> — this is a clinical diagnosis</div><div class="dxf stab"><span class="dxl">Best initial step</span><strong><u><strong>Immediate</strong> needle decompression</u></strong> (2nd ICS midclavicular, or 5th ICS anterior axillary) — <u>never wait for CXR</u></div><div class="dxf tx"><span class="dxl">Definitive treatment</span>Chest tube</div><div class="dxf"><span class="dxl">Second-order</span>This is a <strong>clinical diagnosis</strong> in an unstable patient: decompress first, then chest tube; do not wait for CXR.</div></div>
 <div class="dxcard">
-<div class="dxcard-name">Blunt aortic injury</div><div class="dxf"><span class="dxl">Mechanism / why</span>Rapid deceleration creates shear stress, classically at the <strong>aortic isthmus</strong> near the ligamentum arteriosum.</div><div class="dxf"><span class="dxl">Second-order</span>Widened mediastinum is only a clue; in a stable high-risk mechanism, <strong>CTA</strong> is the diagnostic study.</div>
-<div class="dxf"><span class="dxl">Recognize</span>Widened mediastinum, <u>obliterated aortic knob</u>, NGT deviation right, rib 1/2 fracture</div>
-<div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Gentle HR/BP control (esmolol)</u></strong> — do NOT aggressively resuscitate if hypotensive; can convert contained rupture to free rupture</div>
-<div class="dxf tx"><span class="dxl">Definitive treatment</span>Surgical/endovascular repair</div>
-</div>
+<div class="dxcard-name">Blunt aortic injury</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Rapid deceleration creates shear stress, classically at the <strong>aortic isthmus</strong> near the ligamentum arteriosum.</div><div class="dxf"><span class="dxl">Recognize</span>Widened mediastinum, <u>obliterated aortic knob</u>, NGT deviation right, rib 1/2 fracture</div><div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Gentle HR/BP control (esmolol)</u></strong> — do NOT aggressively resuscitate if hypotensive; can convert contained rupture to free rupture</div><div class="dxf tx"><span class="dxl">Definitive treatment</span>Surgical/endovascular repair</div><div class="dxf"><span class="dxl">Second-order</span>Widened mediastinum is only a clue; in a stable high-risk mechanism, <strong>CTA</strong> is the diagnostic study.</div></div>
 <table>
 <tbody><tr><th>Injury</th><th>Presentation</th><th>Management</th></tr>
 <tr><td>Hemothorax</td><td>Dull to percussion, decreased breath sounds</td><td>Chest tube; thoracotomy if <strong><u>&gt;1500mL initial or &gt;200mL/hr</u></strong></td></tr>
@@ -933,7 +907,7 @@
 <tr><td>Anterior cord</td><td>Flexion injury, anterior spinal artery ischemia</td><td>Motor + pain/temp loss, <u>dorsal columns spared</u></td></tr>
 <tr><td>Brown-Séquard</td><td>Hemisection (penetrating)</td><td><u><u>Ipsilateral motor/proprioception loss, contralateral pain/temp loss</u></u></td></tr>
 </tbody></table>
-</div>
+<div class="kp rose"><span class="kp-label">Recognition pearl</span><strong>Basilar skull fracture:</strong> <u>Battle sign, raccoon eyes, hemotympanum, or CSF otorrhea/rhinorrhea</u> should immediately suggest a basilar skull fracture. Avoid nasogastric/nasotracheal instrumentation when a cribriform plate injury is suspected.</div></div>
 <div class="card">
 <div class="card-title"><span class="dot dot-slate"></span>Extremity Vascular Injury &amp; Massive Transfusion</div>
 <table>
@@ -1001,6 +975,15 @@
 <tr><td>Bedside test</td><td>Lung US — <u>absent lung sliding</u></td><td>Echo — pericardial effusion, RV collapse</td><td>Echo — RV dilation/dysfunction</td></tr>
 <tr><td>Immediate action</td><td><strong>Needle decompression</strong></td><td><strong>Pericardiocentesis</strong></td><td><strong>Thrombolysis</strong> if unstable</td></tr>
 </tbody></table>
+</div><div class="card">
+<div class="card-title"><span class="dot dot-rose"></span>Cardiac Arrest: Shockable vs Nonshockable Rhythms <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
+<table><tbody><tr><th>Rhythm</th><th>Immediate management</th><th>Electrical therapy?</th></tr>
+<tr><td><strong>VF / pulseless VT</strong></td><td><strong>High-quality CPR + defibrillation</strong>; epinephrine and amiodarone/lidocaine per ACLS sequence</td><td><strong>Defibrillate</strong> (unsynchronized)</td></tr>
+<tr><td><strong>PEA / asystole</strong></td><td><strong><u>High-quality CPR immediately + epinephrine ASAP</u></strong> (repeat every 3–5 min) + aggressively search/treat reversible <strong>Hs &amp; Ts</strong></td><td><strong><u>NO shock and NO synchronized cardioversion</u></strong> while pulseless</td></tr>
+</tbody></table>
+<div class="kp rose"><span class="kp-label">Board trap</span><strong>PEA = organized electrical activity without a palpable pulse.</strong> The treatment is <strong><u>CPR, epinephrine, and reversible-cause correction</u></strong>, not synchronized cardioversion. <strong>Synchronized cardioversion is for an unstable tachyarrhythmia when a pulse is present.</strong></div>
+<div class="mnem"><div class="mnem-title">Hs &amp; Ts — reversible PEA causes</div>Hypovolemia • Hypoxia • Hydrogen ion (acidosis) • Hypo-/hyperkalemia • Hypothermia • Tension pneumothorax • Tamponade • Toxins • Thrombosis (pulmonary/coronary)</div>
+<div class="src"><strong>Verified:</strong> 2025 American Heart Association Adult Advanced Life Support algorithms.</div>
 </div>
 <div class="card">
 <div class="card-title"><span class="dot dot-teal"></span>Vasopressor / Inotrope Cheat Sheet</div>
@@ -1029,12 +1012,8 @@
 <li>Source control</li>
 </ol>
 <div class="dxcard">
-<div class="dxcard-name">Septic shock</div><div class="dxf"><span class="dxl">Mechanism / why</span>Dysregulated host response → <strong>vasodilation + capillary leak + maldistributed flow</strong>; myocardial depression may coexist.</div><div class="dxf"><span class="dxl">Second-order</span>Persistent hypotension after adequate fluid resuscitation → <strong>norepinephrine</strong>; complications include AKI, ARDS, DIC, and myocardial dysfunction.</div>
-<div class="dxf test"><span class="dxl">Best initial test</span>Lactate + blood cultures x2 + broad infectious workup (UA, CXR)</div>
-<div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Broad-spectrum IV abx within 1 hour</u></strong> of recognition — <u>don't wait on cultures to return</u></div>
-<div class="dxf tx"><span class="dxl">Next step</span>30mL/kg crystalloid; <u>still hypotensive after fluids</u> → <strong>norepinephrine to MAP≥65</strong></div>
-<div class="dxf disp"><span class="dxl">Disposition</span>ICU if vasopressor-dependent or lactate ≥4</div>
-</div>
+<div class="dxcard-name">Septic shock</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Dysregulated host response → <strong>vasodilation + capillary leak + maldistributed flow</strong>; myocardial depression may coexist.</div><div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Broad-spectrum IV abx within 1 hour</u></strong> of recognition — <u>don't wait on cultures to return</u></div><div class="dxf test"><span class="dxl">Best initial test</span>Lactate + blood cultures x2 + broad infectious workup (UA, CXR)</div><div class="dxf tx"><span class="dxl">Next step</span>30mL/kg crystalloid; <u>still hypotensive after fluids</u> → <strong>norepinephrine to MAP≥65</strong></div><div class="dxf disp"><span class="dxl">Disposition</span>ICU if vasopressor-dependent or lactate ≥4</div><div class="dxf"><span class="dxl">Second-order</span>Persistent hypotension after adequate fluid resuscitation → <strong>norepinephrine</strong>; complications include AKI, ARDS, DIC, and myocardial dysfunction.</div></div>
 </div>
 <div class="card">
 <div class="card-title"><span class="dot dot-violet"></span>Distributive Shock Mini-Cases</div>
@@ -1048,11 +1027,8 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-green"></span>Obstructive Shock — Tamponade &amp; Massive PE <span class="tag tag-hy">HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Cardiac tamponade</div><div class="dxf"><span class="dxl">Mechanism / why</span>Rising pericardial pressure impairs <strong>diastolic filling</strong> → reduced stroke volume and obstructive shock.</div><div class="dxf"><span class="dxl">Second-order</span>Look for <u>pulsus paradoxus, electrical alternans, RA/RV diastolic collapse</u>; unstable tamponade requires immediate drainage.</div>
-<div class="dxf"><span class="dxl">Recognize</span>Beck triad<span class="eponym"> — hypotension + JVD + muffled heart sounds</span>; <u>pulsus paradoxus</u> (SBP drop &gt;10mmHg on inspiration)</div>
-<div class="dxf test"><span class="dxl">Best initial test</span><strong>Bedside echo</strong> — pericardial effusion + diastolic RV collapse</div>
-<div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Pericardiocentesis</u></strong> — do not wait for CT to confirm if unstable</div>
-</div>
+<div class="dxcard-name">Cardiac tamponade</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Rising pericardial pressure impairs <strong>diastolic filling</strong> → reduced stroke volume and obstructive shock.</div><div class="dxf"><span class="dxl">Recognize</span>Beck triad<span class="eponym"> — hypotension + JVD + muffled heart sounds</span>; <u>pulsus paradoxus</u> (SBP drop &gt;10mmHg on inspiration)</div><div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Pericardiocentesis</u></strong> — do not wait for CT to confirm if unstable</div><div class="dxf test"><span class="dxl">Best initial test</span><strong>Bedside echo</strong> — pericardial effusion + diastolic RV collapse</div><div class="dxf"><span class="dxl">Second-order</span>Look for <u>pulsus paradoxus, electrical alternans, RA/RV diastolic collapse</u>; unstable tamponade requires immediate drainage.</div></div>
 </div>
 <div class="card">
 <div class="card-title"><span class="dot dot-rose"></span>Massive Transfusion &amp; Trauma-Induced Coagulopathy</div>
@@ -1069,17 +1045,11 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-blue"></span>Stroke <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Ischemic stroke</div><div class="dxf"><span class="dxl">Mechanism / why</span>Arterial occlusion creates an infarct core surrounded by potentially salvageable <strong>ischemic penumbra</strong>; reperfusion aims to rescue that tissue.</div><div class="dxf"><span class="dxl">Second-order</span>Boards may pivot to <u>large-vessel occlusion → thrombectomy eligibility</u>, hemorrhagic conversion, BP thresholds, or localization from the deficit pattern.</div>
-<div class="dxf test"><span class="dxl">Best initial test</span>Fingerstick glucose + <strong>non-contrast CT head</strong> to rule out hemorrhage <u>before anything else</u></div>
-<div class="dxf tx"><span class="dxl">Definitive treatment</span><strong>IV alteplase if &lt;4.5h</strong>; thrombectomy up to 24h for LVO<span class="eponym"> — large vessel occlusion</span></div>
-<div class="dxf warn"><span class="dxl">Contraindication</span><strong><u>Absolute</u></strong>: prior ICH, ischemic stroke/head trauma &lt;3mo, active internal bleeding, suspected SAH, BP&gt;185/110 unresponsive to tx, anticoagulated with elevated INR/recent DOAC dose. <u>Relative</u>: recent major surgery, GI bleed &lt;3wk, seizure at onset</div>
-<div class="dxf"><span class="dxl">Complication to anticipate</span><strong>Hemorrhagic conversion</strong> — worsening neuro exam post-tPA → stop infusion, emergent CT</div>
-<div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Do NOT aggressively lower BP</u></strong> (permissive hypertension preserves the penumbra) — opposite rule from hemorrhagic stroke</div>
-</div>
+<div class="dxcard-name">Ischemic stroke</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Arterial occlusion creates an infarct core surrounded by potentially salvageable <strong>ischemic penumbra</strong>; reperfusion aims to rescue that tissue.</div><div class="dxf test"><span class="dxl">Best initial test</span>Fingerstick glucose + <strong>non-contrast CT head</strong> to rule out hemorrhage <u>before anything else</u></div><div class="dxf tx"><span class="dxl">Definitive treatment</span><strong>IV alteplase if &lt;4.5h</strong>; thrombectomy up to 24h for LVO<span class="eponym"> — large vessel occlusion</span></div><div class="dxf"><span class="dxl">Second-order</span>Boards may pivot to <u>large-vessel occlusion → thrombectomy eligibility</u>, hemorrhagic conversion, BP thresholds, or localization from the deficit pattern.</div><div class="dxf"><span class="dxl">Complication to anticipate</span><strong>Hemorrhagic conversion</strong> — worsening neuro exam post-tPA → stop infusion, emergent CT</div><div class="dxf warn"><span class="dxl">Contraindication</span><strong><u>Absolute</u></strong>: prior ICH, ischemic stroke/head trauma &lt;3mo, active internal bleeding, suspected SAH, BP&gt;185/110 unresponsive to tx, anticoagulated with elevated INR/recent DOAC dose. <u>Relative</u>: recent major surgery, GI bleed &lt;3wk, seizure at onset</div><div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Do NOT aggressively lower BP</u></strong> (permissive hypertension preserves the penumbra) — opposite rule from hemorrhagic stroke</div></div>
 <div class="dxcard">
-<div class="dxcard-name">Hemorrhagic stroke</div><div class="dxf"><span class="dxl">Mechanism / why</span>Vessel rupture causes direct tissue injury plus <strong>mass effect / rising ICP</strong>; chronic hypertension classically affects deep perforating vessels.</div><div class="dxf"><span class="dxl">Second-order</span>Know the location clues and anticipate <u>herniation, hydrocephalus, anticoagulant reversal, and neurosurgical need</u>.</div>
-<div class="dxf tx"><span class="dxl">Management</span><strong><u>BP control (nicardipine)</u></strong>, reverse anticoagulation, HOB elevation, osmotic therapy for ↑ICP, neurosurgery</div>
-</div>
+<div class="dxcard-name">Hemorrhagic stroke</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Vessel rupture causes direct tissue injury plus <strong>mass effect / rising ICP</strong>; chronic hypertension classically affects deep perforating vessels.</div><div class="dxf tx"><span class="dxl">Management</span><strong><u>BP control (nicardipine)</u></strong>, reverse anticoagulation, HOB elevation, osmotic therapy for ↑ICP, neurosurgery</div><div class="dxf"><span class="dxl">Second-order</span>Know the location clues and anticipate <u>herniation, hydrocephalus, anticoagulant reversal, and neurosurgical need</u>.</div></div>
 <div class="sub">Intracerebral hemorrhage — location predicts presentation</div>
 <table>
 <tbody><tr><th>Location</th><th>Presentation</th></tr>
@@ -1108,7 +1078,7 @@
 <li>Positional HA after LP → epidural blood patch</li>
 <li>Cluster HA → 100% O2 + sumatriptan</li>
 </ul>
-<div class="kp"><span class="kp-label">Next step</span><strong>"AEIOU-TIPS"</strong> for AMS: Alcohol, Endocrine/Electrolytes, Insulin, Opioids/Overdose, Uremia, Trauma, Infection, Psychiatric, Stroke/Seizure. Start with <u>glucose, pulse ox, naloxone</u> if suspected opioid. GCS ≤8 → secure airway.</div>
+<div class="kp"><span class="kp-label">Next step</span><strong>"AEIOU-TIPS"</strong> for AMS: Alcohol, Endocrine/Electrolytes, Insulin, Opioids<span class="drug-ex"> (e.g., morphine, oxycodone, fentanyl)</span>/Overdose, Uremia, Trauma, Infection, Psychiatric, Stroke/Seizure. Start with <u>glucose, pulse ox, naloxone</u> if suspected opioid. GCS ≤8 → secure airway.</div>
 </div>
 <div class="card">
 <div class="card-title"><span class="dot dot-amber"></span>Meningitis vs Encephalitis <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
@@ -1137,7 +1107,7 @@
 <div class="sub">Peripheral weakness</div>
 <ul>
 <li><strong>Guillain-Barré:</strong> <strong><u>days-weeks after a GI or respiratory infection</u></strong> (classically <em>Campylobacter jejuni</em>) → autoimmune attack on peripheral nerves, classically an <strong>acute inflammatory demyelinating polyneuropathy</strong>. Recognize <u>ascending symmetric weakness + areflexia</u> ± paresthesias/autonomic instability; <u>monitor serial FVC/NIF</u>; tx IVIG or plasmapheresis (<strong>steroids do not help</strong>).</li>
-<li><strong>Myasthenic crisis:</strong> worsening weakness + resp failure, may need intubation; <strong><u>avoid aminoglycosides/beta blockers/magnesium</u></strong> (worsen NMJ transmission)</li>
+<li><strong>Myasthenic crisis:</strong> worsening weakness + resp failure, may need intubation; <strong><u>avoid aminoglycosides/beta blockers<span class="drug-ex"> (e.g., metoprolol, propranolol, labetalol)</span>/magnesium</u></strong> (worsen NMJ transmission)</li>
 </ul>
 </div>
 <div class="card">
@@ -1166,7 +1136,7 @@
 <div class="dxcard">
 <div class="dxcard-name">Alcohol withdrawal</div>
 <div class="dxf"><span class="dxl">Recognize</span>Progresses: <strong>tremor/anxiety (6-24h) → seizures (12-48h) → delirium tremens (48-96h)</strong> — DTs = AMS + autonomic instability + hallucinations, <u>can be fatal untreated</u></div>
-<div class="dxf tx"><span class="dxl">Management</span><strong>CIWA-guided benzodiazepines</strong> first-line</div>
+<div class="dxf tx"><span class="dxl">Management</span><strong>CIWA-guided benzodiazepines<span class="drug-ex"> (e.g., lorazepam, diazepam, midazolam)</span></strong> first-line</div>
 <div class="dxf warn"><span class="dxl">Do NOT</span><strong><u>Give glucose before/without thiamine</u></strong> in malnourished/alcoholic patients — can precipitate Wernicke encephalopathy</div>
 </div>
 <table>
@@ -1244,16 +1214,8 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-teal"></span>Pulmonary Embolism <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Pulmonary embolism</div><div class="dxf"><span class="dxl">Mechanism / why</span>Usually DVT embolization → abrupt pulmonary vascular obstruction → <strong>V/Q mismatch + increased RV afterload</strong>.</div><div class="dxf"><span class="dxl">Second-order</span>Massive PE = <u>hemodynamic instability</u>; submassive/intermediate-risk = RV strain or biomarker elevation without shock. Acute RV failure is the major lethal physiology.</div>
-<div class="dxf"><span class="dxl">Stem clues / setup</span><strong>Virchow triad</strong> — recent surgery/immobilization, long flight/travel, malignancy, pregnancy/postpartum, OCP/estrogen use, prior VTE, hypercoagulable state</div>
-<div class="dxf"><span class="dxl">Recognize</span>Pleuritic chest pain, tachycardia, dyspnea; V/Q mismatch → hypoxemia + hypocapnia (respiratory alkalosis)</div>
-<div class="dxf test"><span class="dxl">Best screening</span><strong>Wells score</strong> → if low risk, <u>PERC rule</u> (all 8 negative rules out PE without D-dimer)</div>
-<div class="dxf img"><span class="dxl">Best/confirmatory test</span><strong>CTA chest</strong> (V/Q scan if contrast contraindicated <u>or in pregnancy to minimize breast tissue radiation</u>)</div>
-<div class="dxf tx"><span class="dxl">Low-risk/submassive</span>Anticoagulation alone: <strong>heparin/LMWH/DOAC</strong></div>
-<div class="dxf warn"><span class="dxl">Massive PE (hypotensive/unstable)</span><strong><u>Systemic thrombolysis (tPA)</u></strong> or catheter-directed therapy; surgical/mechanical embolectomy if thrombolysis contraindicated</div>
-<div class="dxf"><span class="dxl">Complication to anticipate</span><strong>RV strain → obstructive shock</strong> — echo showing RV dilation/dysfunction signals higher-risk (submassive) PE even if normotensive</div>
-<div class="dxf disp"><span class="dxl">Disposition</span>Low-risk (normal RV, hemodynamically stable, low PESI score) may be candidates for outpatient anticoagulation; any RV strain or instability → admit</div>
-</div>
+<div class="dxcard-name">Pulmonary embolism</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Usually DVT embolization → abrupt pulmonary vascular obstruction → <strong>V/Q mismatch + increased RV afterload</strong>.</div><div class="dxf"><span class="dxl">Stem clues / setup</span><strong>Virchow triad</strong> — recent surgery/immobilization, long flight/travel, malignancy, pregnancy/postpartum, OCP/estrogen use, prior VTE, hypercoagulable state</div><div class="dxf"><span class="dxl">Recognize</span>Pleuritic chest pain, tachycardia, dyspnea; V/Q mismatch → hypoxemia + hypocapnia (respiratory alkalosis)</div><div class="dxf img"><span class="dxl">Best/confirmatory test</span><strong>CTA chest</strong> (V/Q scan if contrast contraindicated <u>or in pregnancy to minimize breast tissue radiation</u>)</div><div class="dxf test"><span class="dxl">Best screening</span><strong>Wells score</strong> → if low risk, <u>PERC rule</u> (all 8 negative rules out PE without D-dimer)</div><div class="dxf tx"><span class="dxl">Low-risk/submassive</span>Anticoagulation alone: <strong>heparin/LMWH/DOAC</strong></div><div class="dxf warn"><span class="dxl">Massive PE (hypotensive/unstable)</span><strong><u>Systemic thrombolysis (tPA)</u></strong> or catheter-directed therapy; surgical/mechanical embolectomy if thrombolysis contraindicated</div><div class="dxf disp"><span class="dxl">Disposition</span>Low-risk (normal RV, hemodynamically stable, low PESI score) may be candidates for outpatient anticoagulation; any RV strain or instability → admit</div><div class="dxf"><span class="dxl">Second-order</span>Massive PE = <u>hemodynamic instability</u>; submassive/intermediate-risk = RV strain or biomarker elevation without shock. Acute RV failure is the major lethal physiology.</div><div class="dxf"><span class="dxl">Complication to anticipate</span><strong>RV strain → obstructive shock</strong> — echo showing RV dilation/dysfunction signals higher-risk (submassive) PE even if normotensive</div></div>
 <div class="kp violet"><span class="kp-label">Qbank depth — PERC rule</span>Used <u>only</u> in patients already deemed low pretest probability. All 8 must be negative: age &lt;50, HR &lt;100, SpO2 ≥95%, no hemoptysis, no estrogen use, no prior DVT/PE, no unilateral leg swelling, no recent surgery/trauma.</div>
 </div>
 <div class="card">
@@ -1284,13 +1246,8 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-teal"></span>COPD &amp; Acute Hypercapnic Respiratory Failure <span class="tag tag-hy">HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Acute-on-chronic hypercapnic respiratory failure (COPD)</div><div class="dxf"><span class="dxl">Mechanism / why</span>Airflow obstruction + V/Q mismatch + respiratory-muscle fatigue reduce alveolar ventilation → <strong>CO₂ retention and respiratory acidosis</strong>.</div><div class="dxf"><span class="dxl">Second-order</span>Worsening acidosis/mental status despite NIV, inability to protect airway, or refractory hypoxemia → <strong>intubation</strong>.</div>
-<div class="dxf"><span class="dxl">Why it happens</span>Chronic CO2 retention from airflow obstruction/V-Q mismatch; during an acute exacerbation, worsening ventilation causes <strong>further CO2 rise</strong> that the patient can no longer compensate for</div>
-<div class="dxf warn"><span class="dxl">Recognize</span>Headache, confusion, somnolence, AMS, <u>asterixis</u> — think hypercapnia, not just hypoxia, when a COPD patient is "sleepy"</div>
-<div class="dxf test"><span class="dxl">Best initial test</span><strong>VBG/ABG</strong> — respiratory acidosis (↑CO2, ↓pH) with or without metabolic compensation (↑bicarb if chronic)</div>
-<div class="dxf tx"><span class="dxl">Management</span><strong>NIV (BiPAP)</strong> first-line if the patient can protect their airway and is not in extremis; <strong><u>intubate</u></strong> if NIV fails, mental status is too depressed to tolerate a mask, or the patient can't protect the airway</div>
-<div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Do not withhold needed oxygen for fear of "removing hypoxic drive"</u></strong> — this classic teaching is outdated/oversimplified; the real mechanism of oxygen-associated hypercapnia is <u>worsened V-Q mismatch and the Haldane effect</u>. Give <strong>controlled, titrated oxygen</strong> to a target (not high-flow/uncontrolled) rather than withholding it entirely.</div>
-</div>
+<div class="dxcard-name">Acute-on-chronic hypercapnic respiratory failure (COPD)</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Airflow obstruction + V/Q mismatch + respiratory-muscle fatigue reduce alveolar ventilation → <strong>CO₂ retention and respiratory acidosis</strong>.</div><div class="dxf"><span class="dxl">Why it happens</span>Chronic CO2 retention from airflow obstruction/V-Q mismatch; during an acute exacerbation, worsening ventilation causes <strong>further CO2 rise</strong> that the patient can no longer compensate for</div><div class="dxf warn"><span class="dxl">Recognize</span>Headache, confusion, somnolence, AMS, <u>asterixis</u> — think hypercapnia, not just hypoxia, when a COPD patient is "sleepy"</div><div class="dxf test"><span class="dxl">Best initial test</span><strong>VBG/ABG</strong> — respiratory acidosis (↑CO2, ↓pH) with or without metabolic compensation (↑bicarb if chronic)</div><div class="dxf tx"><span class="dxl">Management</span><strong>NIV (BiPAP)</strong> first-line if the patient can protect their airway and is not in extremis; <strong><u>intubate</u></strong> if NIV fails, mental status is too depressed to tolerate a mask, or the patient can't protect the airway</div><div class="dxf"><span class="dxl">Second-order</span>Worsening acidosis/mental status despite NIV, inability to protect airway, or refractory hypoxemia → <strong>intubation</strong>.</div><div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Do not withhold needed oxygen for fear of "removing hypoxic drive"</u></strong> — this classic teaching is outdated/oversimplified; the real mechanism of oxygen-associated hypercapnia is <u>worsened V-Q mismatch and the Haldane effect</u>. Give <strong>controlled, titrated oxygen</strong> to a target (not high-flow/uncontrolled) rather than withholding it entirely.</div></div>
 <table>
 <tbody><tr><th>NIV (BiPAP)</th><th>Indications</th><th>Contraindications</th></tr>
 <tr><td></td><td><strong>COPD/CHF exacerbation</strong> with respiratory distress, awake and cooperative</td><td><strong><strong><u>Cannot protect airway</u></strong>, AMS, vomiting, facial trauma, <strong><u>hemodynamic instability</u></strong>, cardiac/respiratory arrest</strong></td></tr>
@@ -1315,12 +1272,8 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-violet"></span>Obstructive Lung Disease, ARDS &amp; Anaphylaxis <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Anaphylaxis</div><div class="dxf"><span class="dxl">Mechanism / why</span>Systemic mast-cell mediator release causes <strong>vasodilation/capillary leak + bronchoconstriction</strong>; shock can occur without skin findings.</div><div class="dxf"><span class="dxl">Second-order</span><strong>IM epinephrine is first-line</strong>; antihistamines/steroids are adjuncts and must never delay epinephrine.</div>
-<div class="dxf"><span class="dxl">Stem clues / setup</span>Symptoms <strong>minutes after</strong> a new food, medication (especially antibiotics), insect sting, or contrast exposure — <u>prior similar reaction to the same trigger</u> raises suspicion</div>
-<div class="dxf"><span class="dxl">Recognize</span>Urticaria/angioedema + resp or GI/CV compromise <u>after exposure</u></div>
-<div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>IM epinephrine first</u></strong> — <u>no contraindications</u> — anterolateral thigh</div>
-<div class="dxf tx"><span class="dxl">Next step</span>Antihistamines, steroids, albuterol; observe for <strong>biphasic reaction</strong> (~20% within 72h)</div>
-</div>
+<div class="dxcard-name">Anaphylaxis</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Systemic mast-cell mediator release causes <strong>vasodilation/capillary leak + bronchoconstriction</strong>; shock can occur without skin findings.</div><div class="dxf"><span class="dxl">Stem clues / setup</span>Symptoms <strong>minutes after</strong> a new food, medication (especially antibiotics), insect sting, or contrast exposure — <u>prior similar reaction to the same trigger</u> raises suspicion</div><div class="dxf"><span class="dxl">Recognize</span>Urticaria/angioedema + resp or GI/CV compromise <u>after exposure</u></div><div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>IM epinephrine first</u></strong> — <u>no contraindications</u> — anterolateral thigh</div><div class="dxf tx"><span class="dxl">Next step</span>Antihistamines, steroids, albuterol; observe for <strong>biphasic reaction</strong> (~20% within 72h)</div><div class="dxf"><span class="dxl">Second-order</span><strong>IM epinephrine is first-line</strong>; antihistamines/steroids are adjuncts and must never delay epinephrine.</div></div>
 <table>
 <tbody><tr><th>Dx</th><th>Key features</th><th>Management</th></tr>
 <tr><td>COPD exacerbation</td><td>↑sputum/dyspnea/cough, often URI-triggered</td><td>Bronchodilators, systemic steroids, abx if purulent sputum, BiPAP if distressed, <u>controlled O2 (avoid hypercapnia)</u></td></tr>
@@ -1332,10 +1285,7 @@
 <div class="card-title"><span class="dot dot-slate"></span>Pneumothorax, Effusion &amp; Airway Emergencies <span class="tag tag-hy">HIGH YIELD</span></div>
 <div class="dxcard">
 <div class="dxcard-name">Epiglottitis</div>
-<div class="dxf warn"><span class="dxl">Recognize</span>Drooling, tripod position, muffled voice, <strong>thumbprint sign</strong> on lateral neck XR</div>
-<div class="dxf warn"><span class="dxl">Do NOT</span><strong><u>Do NOT examine the throat or agitate the patient</u></strong> — can precipitate complete obstruction</div>
-<div class="dxf stab"><span class="dxl">Best initial step</span>Secure airway in OR with anesthesia/ENT standby</div>
-</div>
+<div class="dxf warn"><span class="dxl">Recognize</span>Drooling, tripod position, muffled voice, <strong>thumbprint sign</strong> on lateral neck XR</div><div class="dxf stab"><span class="dxl">Best initial step</span>Secure airway in OR with anesthesia/ENT standby</div><div class="dxf warn"><span class="dxl">Do NOT</span><strong><u>Do NOT examine the throat or agitate the patient</u></strong> — can precipitate complete obstruction</div></div>
 <div class="sub">Croup vs epiglottitis (pediatric stridor)</div>
 <table>
 <tbody><tr><th></th><th>Croup</th><th>Epiglottitis</th></tr>
@@ -1385,11 +1335,8 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-blue"></span>Renal / Urologic Emergencies <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Testicular torsion</div><div class="dxf"><span class="dxl">Mechanism / why</span>Twisting of the spermatic cord obstructs venous then arterial flow → <strong>time-dependent testicular ischemia</strong>.</div><div class="dxf"><span class="dxl">Second-order</span><u>Absent cremasteric reflex + high-riding testis</u> are classic; high clinical suspicion → urology/OR without delaying for ultrasound.</div>
-<div class="dxf warn"><span class="dxl">Recognize</span>Sudden severe pain, <strong>high-riding testis</strong>, <u>absent cremasteric reflex</u></div>
-<div class="dxf warn"><span class="dxl">Best initial step</span><strong><u>Emergent urology consult — this is a clinical diagnosis</u></strong>; don't delay for imaging if suspicion is high; manual detorsion while awaiting OR</div>
-<div class="dxf test"><span class="dxl">Confirmatory test</span>Doppler US (only if it won't delay definitive care)</div>
-</div>
+<div class="dxcard-name">Testicular torsion</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Twisting of the spermatic cord obstructs venous then arterial flow → <strong>time-dependent testicular ischemia</strong>.</div><div class="dxf warn"><span class="dxl">Recognize</span>Sudden severe pain, <strong>high-riding testis</strong>, <u>absent cremasteric reflex</u></div><div class="dxf warn"><span class="dxl">Best initial step</span><strong><u>Emergent urology consult — this is a clinical diagnosis</u></strong>; don't delay for imaging if suspicion is high; manual detorsion while awaiting OR</div><div class="dxf test"><span class="dxl">Confirmatory test</span>Doppler US (only if it won't delay definitive care)</div><div class="dxf"><span class="dxl">Second-order</span><u>Absent cremasteric reflex + high-riding testis</u> are classic; high clinical suspicion → urology/OR without delaying for ultrasound.</div></div>
 <table>
 <tbody><tr><th>Dx</th><th>Key features</th><th>Management</th></tr>
 <tr><td>Priapism</td><td>Prolonged painful erection</td><td><strong><strong><u>Ischemic (low-flow) = emergency</u></strong></strong> — <strong>aspiration + phenylephrine</strong></td></tr>
@@ -1408,14 +1355,8 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-teal"></span>OB/GYN Emergencies <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Ectopic pregnancy</div><div class="dxf"><span class="dxl">Mechanism / why</span>Implantation outside the uterine cavity, usually the fallopian tube, can erode vessels and cause <strong>life-threatening hemoperitoneum</strong>.</div><div class="dxf"><span class="dxl">Second-order</span>Boards often test <u>methotrexate contraindications</u>, Rh(D) immune globulin when indicated, or unstable rupture → surgery.</div>
-<div class="dxf"><span class="dxl">Stem clues / setup</span><strong>Prior ectopic</strong>, <u>PID/tubal pathology, prior tubal surgery, IUD in place, assisted reproductive technology (IVF)</u></div>
-<div class="dxf"><span class="dxl">Recognize</span><strong>+hCG</strong> + pelvic/abd pain ± bleeding; <u>rupture = hemoperitoneum/shock</u></div>
-<div class="dxf test"><span class="dxl">Best initial test</span><strong>Transvaginal US</strong> — no IUP + hCG above discriminatory zone (~1500-2000) = suspicious</div>
-<div class="dxf tx"><span class="dxl">Stable</span><strong>Methotrexate</strong> if criteria met</div>
-<div class="dxf warn"><span class="dxl">Contraindication</span>MTX contraindicated if: <strong><u>intrauterine pregnancy, breastfeeding, immunodeficiency, hepatic/renal/hematologic disease, or mass &gt;3.5-4cm/hCG too high</u></strong> — these patients need surgery instead</div>
-<div class="dxf warn"><span class="dxl">Unstable/ruptured</span><strong><u>Surgery</u></strong> — do not attempt medical management</div>
-</div>
+<div class="dxcard-name">Ectopic pregnancy</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Implantation outside the uterine cavity, usually the fallopian tube, can erode vessels and cause <strong>life-threatening hemoperitoneum</strong>.</div><div class="dxf"><span class="dxl">Stem clues / setup</span><strong>Prior ectopic</strong>, <u>PID/tubal pathology, prior tubal surgery, IUD in place, assisted reproductive technology (IVF)</u></div><div class="dxf"><span class="dxl">Recognize</span><strong>+hCG</strong> + pelvic/abd pain ± bleeding; <u>rupture = hemoperitoneum/shock</u></div><div class="dxf test"><span class="dxl">Best initial test</span><strong>Transvaginal US</strong> — no IUP + hCG above discriminatory zone (~1500-2000) = suspicious</div><div class="dxf tx"><span class="dxl">Stable</span><strong>Methotrexate</strong> if criteria met</div><div class="dxf warn"><span class="dxl">Unstable/ruptured</span><strong><u>Surgery</u></strong> — do not attempt medical management</div><div class="dxf"><span class="dxl">Second-order</span>Boards often test <u>methotrexate contraindications</u>, Rh(D) immune globulin when indicated, or unstable rupture → surgery.</div><div class="dxf warn"><span class="dxl">Contraindication</span>MTX contraindicated if: <strong><u>intrauterine pregnancy, breastfeeding, immunodeficiency, hepatic/renal/hematologic disease, or mass &gt;3.5-4cm/hCG too high</u></strong> — these patients need surgery instead</div></div>
 <div class="dxcard">
 <div class="dxcard-name">Ovarian torsion</div>
 <div class="dxf"><span class="dxl">Recognize</span>Sudden unilateral pain, N/V, adnexal mass</div>
@@ -1472,62 +1413,38 @@
 <div class="card-title"><span class="dot dot-rose"></span>Potassium Emergencies <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
 <div class="dxcard-name">Hyperkalemia</div>
-<div class="dxf"><span class="dxl">Common causes</span>Renal failure, <strong>medications</strong> (ACEi/ARB, spironolactone, NSAIDs, succinylcholine), tissue breakdown (rhabdo, tumor lysis, hemolysis), acidosis (shifts K+ extracellular)</div>
-<div class="dxf warn"><span class="dxl">ECG progression — severity clue</span><strong>Peaked T waves</strong> → PR prolongation/flattened P waves → <strong>widened QRS</strong> → <strong><u>sine wave → V fib/asystole</u></strong></div>
-<div class="dxf tx"><span class="dxl">Management — STABILIZE → SHIFT → ELIMINATE</span><strong>1. STABILIZE membrane:</strong> IV calcium gluconate/chloride if ECG changes present — <u>does NOT lower serum K+</u>, only protects the heart. <strong>2. SHIFT intracellularly:</strong> insulin+glucose, albuterol, bicarb if acidotic. <strong>3. ELIMINATE:</strong> loop diuretics, kayexalate/patiromer, dialysis if refractory/severe renal failure</div>
-<div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Calcium does not lower potassium</u></strong> — it only stabilizes the myocardial membrane while shift/elimination therapies take effect. Don't skip calcium in a patient with ECG changes to "go straight to" insulin.</div>
-</div>
+<div class="dxf"><span class="dxl">Presentation</span>Often asymptomatic until cardiac toxicity; may cause <strong>muscle weakness/flaccid paralysis</strong>, paresthesias, palpitations, and potentially lethal dysrhythmias.</div><div class="dxf"><span class="dxl">Common causes</span>Renal failure, <strong>medications</strong> (ACEi/ARB, spironolactone, NSAIDs, succinylcholine), tissue breakdown (rhabdo, tumor lysis, hemolysis), acidosis (shifts K+ extracellular)</div><div class="dxf warn"><span class="dxl">ECG progression — severity clue</span><strong>Peaked T waves</strong> → PR prolongation/flattened P waves → <strong>widened QRS</strong> → <strong><u>sine wave → V fib/asystole</u></strong></div><div class="dxf tx"><span class="dxl">Management — STABILIZE → SHIFT → ELIMINATE</span><strong>1. STABILIZE membrane:</strong> IV calcium gluconate/chloride if ECG changes present — <u>does NOT lower serum K+</u>, only protects the heart. <strong>2. SHIFT intracellularly:</strong> insulin+glucose, albuterol, bicarb if acidotic. <strong>3. ELIMINATE:</strong> loop diuretics<span class="drug-ex"> (e.g., furosemide, bumetanide)</span>, kayexalate/patiromer, dialysis if refractory/severe renal failure</div><div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Calcium does not lower potassium</u></strong> — it only stabilizes the myocardial membrane while shift/elimination therapies take effect. Don't skip calcium in a patient with ECG changes to "go straight to" insulin.</div></div>
 <div class="dxcard">
 <div class="dxcard-name">Hypokalemia</div>
-<div class="dxf"><span class="dxl">Common causes</span><strong>GI losses</strong> (vomiting, diarrhea), <strong>renal losses</strong> (diuretics, hyperaldosteronism), intracellular shift (insulin, beta-agonists, alkalosis)</div>
-<div class="dxf"><span class="dxl">Presentation</span>Weakness, <strong>arrhythmia</strong> (PVCs, torsades), ileus</div>
-<div class="dxf warn"><span class="dxl">ECG</span>Flattened/inverted T waves, <strong>U waves</strong>, ST depression</div>
-<div class="dxf tx"><span class="dxl">Management</span>Oral repletion if mild/asymptomatic; <strong>IV repletion with cardiac monitoring</strong> if severe/symptomatic</div>
-<div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Check and correct magnesium</u></strong> — hypokalemia that won't correct despite adequate potassium replacement is often driven by coexisting hypomagnesemia (Mg is needed to retain K+ in the cell).</div>
-</div>
+<div class="dxf"><span class="dxl">Presentation</span>Weakness, <strong>arrhythmia</strong> (PVCs, torsades), ileus</div><div class="dxf"><span class="dxl">Common causes</span><strong>GI losses</strong> (vomiting, diarrhea), <strong>renal losses</strong> (diuretics, hyperaldosteronism), intracellular shift (insulin, beta-agonists, alkalosis)</div><div class="dxf warn"><span class="dxl">ECG</span>Flattened/inverted T waves, <strong>U waves</strong>, ST depression</div><div class="dxf tx"><span class="dxl">Management</span>Oral repletion if mild/asymptomatic; <strong>IV repletion with cardiac monitoring</strong> if severe/symptomatic</div><div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Check and correct magnesium</u></strong> — hypokalemia that won't correct despite adequate potassium replacement is often driven by coexisting hypomagnesemia (Mg is needed to retain K+ in the cell).</div></div>
 <div class="kp"><span class="kp-label">Mechanism anchor</span>Hyperkalemia depolarizes resting membrane potential and progressively impairs cardiac conduction; hypokalemia hyperpolarizes cells and increases ectopy. Second-order: in hyperkalemia think <strong>stabilize membrane → shift K intracellularly → eliminate K</strong>.</div></div>
 <div class="card">
 <div class="card-title"><span class="dot dot-amber"></span>Sodium Emergencies <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
 <div class="dxcard-name">Hyponatremia</div>
-<div class="dxf"><span class="dxl">Common causes</span>Categorize by <strong>volume status</strong>: hypovolemic (GI/renal losses), euvolemic (SIADH, psychogenic polydipsia, hypothyroid), hypervolemic (HF, cirrhosis, nephrotic syndrome)</div>
-<div class="dxf warn"><span class="dxl">Severe symptomatic (seizures, severe AMS)</span><strong>Hypertonic (3%) saline</strong> regardless of chronicity/cause — treat the emergency first</div>
-<div class="dxf warn"><span class="dxl">Board trap — correction rate</span><strong><u>Do NOT correct chronic hyponatremia too rapidly</u></strong> — commonly cited board limit is <strong>no more than ~8 mEq/L rise in 24 hours</strong> (some sources are more conservative in high-risk patients — alcoholism, malnutrition, liver disease, hypokalemia). Overcorrection risks <strong><u>osmotic demyelination syndrome</u></strong> (central pontine myelinolysis) — permanent neurologic injury</div>
-</div>
+<div class="dxf"><span class="dxl">Presentation</span>Primarily neurologic from cerebral edema: <strong>nausea/headache → confusion/lethargy → seizures/coma</strong>; severity depends heavily on <u>how rapidly sodium fell</u>.</div><div class="dxf"><span class="dxl">Common causes</span>Categorize by <strong>volume status</strong>: hypovolemic (GI/renal losses), euvolemic (SIADH, psychogenic polydipsia, hypothyroid), hypervolemic (HF, cirrhosis, nephrotic syndrome)</div><div class="dxf tx"><span class="dxl">Management — severe symptomatic</span><strong>Hypertonic (3%) saline</strong> regardless of chronicity/cause — treat the emergency first</div><div class="dxf tx"><span class="dxl">Management — by volume status</span><strong>Hypovolemic:</strong> isotonic saline. <strong>Euvolemic/SIADH:</strong> fluid restriction + treat cause. <strong>Hypervolemic:</strong> fluid/sodium restriction ± loop diuretic and treat HF/cirrhosis/renal cause.</div><div class="dxf warn"><span class="dxl">Board trap — correction rate</span><strong><u>Do NOT correct chronic hyponatremia too rapidly</u></strong> — commonly cited board limit is <strong>no more than ~8 mEq/L rise in 24 hours</strong> (some sources are more conservative in high-risk patients — alcoholism, malnutrition, liver disease, hypokalemia). Overcorrection risks <strong><u>osmotic demyelination syndrome</u></strong> (central pontine myelinolysis) — permanent neurologic injury</div></div>
 <div class="dxcard">
 <div class="dxcard-name">Hypernatremia</div>
-<div class="dxf"><span class="dxl">Common causes</span><strong>Free water loss</strong> (diabetes insipidus, insensible losses, poor access to water — elderly/infants) &gt; sodium gain (hypertonic fluids, salt ingestion)</div>
-<div class="dxf"><span class="dxl">Presentation</span>Neurologic (lethargy, irritability, seizures if severe); assess volume status first — <strong>hypovolemic patients need isotonic fluids initially</strong> before free-water replacement</div>
-<div class="dxf warn"><span class="dxl">Board trap — correction rate</span><strong><u>Do NOT correct too rapidly</u></strong> — commonly cited limit is <strong>no faster than ~0.5 mEq/L/hour (roughly 10-12 mEq/L per 24 hours)</strong>. Overcorrection risks <strong><u>cerebral edema</u></strong> as water shifts into brain cells</div>
-</div>
+<div class="dxf"><span class="dxl">Presentation</span>Neurologic (lethargy, irritability, seizures if severe); assess volume status first — <strong>hypovolemic patients need isotonic fluids initially</strong> before free-water replacement</div><div class="dxf"><span class="dxl">Common causes</span><strong>Free water loss</strong> (diabetes insipidus, insensible losses, poor access to water — elderly/infants) &gt; sodium gain (hypertonic fluids, salt ingestion)</div><div class="dxf tx"><span class="dxl">Management</span>If hypovolemic/shocked, <strong>restore perfusion first with isotonic crystalloid</strong>; then replace the free-water deficit with enteral water or hypotonic fluid (for example D5W) and treat the cause (e.g., diabetes insipidus).</div><div class="dxf warn"><span class="dxl">Board trap — correction rate</span><strong><u>Do NOT correct too rapidly</u></strong> — commonly cited limit is <strong>no faster than ~0.5 mEq/L/hour (roughly 10-12 mEq/L per 24 hours)</strong>. Overcorrection risks <strong><u>cerebral edema</u></strong> as water shifts into brain cells</div></div>
 <div class="kp"><span class="kp-label">Mechanism anchor</span>Sodium disorders are primarily <strong>water-balance disorders</strong>. Acute hyponatremia causes cerebral edema; overly rapid correction of chronic hyponatremia risks osmotic demyelination. Hypernatremia causes cellular dehydration, especially neurologic symptoms.</div></div>
 <div class="card">
 <div class="card-title"><span class="dot dot-teal"></span>Calcium &amp; Magnesium Emergencies <span class="tag tag-hy">HIGH YIELD</span></div>
 <div class="dxcard">
 <div class="dxcard-name">Hypercalcemia</div>
-<div class="dxf"><span class="dxl">Common causes</span><strong>Hyperparathyroidism</strong> (outpatient, most common overall) and <strong>malignancy</strong> (most common cause in hospitalized/acutely ill patients)</div>
-<div class="dxf"><span class="dxl">Presentation</span>AMS, constipation, nephrolithiasis, weakness; <u>shortened QT</u> on ECG</div>
-<div class="dxf tx"><span class="dxl">Management by severity</span><strong>1st: IV isotonic fluids</strong> (mainstay). <strong>Calcitonin</strong> for rapid but temporary effect. <strong>Bisphosphonates</strong> for sustained control (onset takes days). <strong>Dialysis</strong> only for severe/refractory cases or renal failure</div>
-</div>
+<div class="dxf"><span class="dxl">Presentation</span><strong>“Stones, bones, groans, psychiatric overtones”</strong>: nephrolithiasis/polyuria, weakness, constipation/abdominal symptoms, confusion; <u>shortened QT</u> on ECG.</div><div class="dxf"><span class="dxl">Common causes</span><strong>Hyperparathyroidism</strong> (outpatient, most common overall) and <strong>malignancy</strong> (most common cause in hospitalized/acutely ill patients)</div><div class="dxf tx"><span class="dxl">Management by severity</span><strong>1st: IV isotonic fluids</strong> (mainstay). <strong>Calcitonin</strong> for rapid but temporary effect. <strong>Bisphosphonates</strong> for sustained control (onset takes days). <strong>Dialysis</strong> only for severe/refractory cases or renal failure</div></div>
 <div class="dxcard">
 <div class="dxcard-name">Hypocalcemia</div>
-<div class="dxf"><span class="dxl">Common causes</span>Hypoparathyroidism (post-thyroidectomy), vitamin D deficiency, pancreatitis, massive transfusion (citrate chelation)</div>
-<div class="dxf"><span class="dxl">Presentation</span><strong>Paresthesias, tetany</strong>, seizures; <u>prolonged QT</u> on ECG</div>
-<div class="dxf tx"><span class="dxl">Severe/symptomatic management</span><strong>IV calcium</strong>; check and correct magnesium — hypomagnesemia impairs PTH release and causes refractory hypocalcemia</div>
-</div>
-<table>
-<tbody><tr><th>Magnesium abnormality</th><th>Key features &amp; management</th></tr>
-<tr><td>Hypomagnesemia</td><td><strong>Torsades risk</strong>; causes refractory hypokalemia — treat with <strong>magnesium replacement</strong></td></tr>
-<tr><td>Hypermagnesemia</td><td>Hyporeflexia → hypotension → bradycardia (classically seen with <strong>eclampsia treatment/renal failure</strong>); <strong>IV calcium</strong> stabilizes in severe toxicity</td></tr>
+<div class="dxf"><span class="dxl">Presentation</span><strong>Perioral/finger paresthesias, cramps/tetany</strong>, hyperreflexia, seizures or laryngospasm if severe; <u>prolonged QT</u>. Chvostek/Trousseau may appear.</div><div class="dxf"><span class="dxl">Common causes</span>Hypoparathyroidism (post-thyroidectomy), vitamin D deficiency, pancreatitis, massive transfusion (citrate chelation)</div><div class="dxf tx"><span class="dxl">Severe/symptomatic management</span><strong>IV calcium</strong>; check and correct magnesium — hypomagnesemia impairs PTH release and causes refractory hypocalcemia</div></div>
+<table><tbody>
+<tr><th>Magnesium abnormality</th><th>Presentation / clue</th><th>Management</th></tr>
+<tr><td><strong>Hypomagnesemia</strong></td><td>Tremor/weakness, hyperreflexia, seizures; <strong>QT prolongation/torsades</strong>; often causes <u>refractory hypokalemia and hypocalcemia</u></td><td><strong>Magnesium replacement</strong>; IV magnesium for torsades/severe symptomatic deficiency</td></tr>
+<tr><td><strong>Hypermagnesemia</strong></td><td><strong>Hyporeflexia</strong> → lethargy, hypotension, bradycardia, respiratory depression; classically renal failure or excess Mg during eclampsia treatment</td><td>Stop Mg; <strong>IV calcium gluconate</strong> for significant toxicity + IV fluids/loop diuresis if appropriate; dialysis if severe renal failure</td></tr>
 </tbody></table>
 </div>
 <div class="card">
 <div class="card-title"><span class="dot dot-rose"></span>Postpartum Hemorrhage &amp; Delivery Emergencies <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
-<div class="dxcard"><div class="dxcard-name">Postpartum hemorrhage</div><div class="dxf"><span class="dxl">Mechanism / why</span>Think the <strong>4 Ts</strong>: Tone (uterine atony, most common), Trauma, Tissue, Thrombin.</div><div class="dxf"><span class="dxl">Second-order</span>Uterotonic contraindications are frequently tested: <strong><u>methylergonovine → avoid HTN/preeclampsia; carboprost → avoid asthma</u></strong>.</div>
-<div class="dxf"><span class="dxl">Think 4 Ts</span><strong>Tone</strong> (uterine atony, most common), Trauma, Tissue, Thrombin</div>
-<div class="dxf stab"><span class="dxl">Best initial steps</span>Call for help, resuscitate, quantify bleeding, <strong>uterine/fundal massage + oxytocin</strong>, evaluate retained tissue/laceration</div>
-<div class="dxf tx"><span class="dxl">Escalation</span>Additional uterotonics + <strong>tranexamic acid early</strong>; balloon tamponade/embolization/surgery if refractory</div>
-<div class="dxf warn"><span class="dxl">Pharm traps</span><strong><u>Avoid methylergonovine in HTN/preeclampsia</u></strong>; <strong><u>avoid carboprost in asthma</u></strong></div></div>
+<div class="dxcard"><div class="dxcard-name">Postpartum hemorrhage</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Think the <strong>4 Ts</strong>: Tone (uterine atony, most common), Trauma, Tissue, Thrombin.</div><div class="dxf stab"><span class="dxl">Best initial steps</span>Call for help, resuscitate, quantify bleeding, <strong>uterine/fundal massage + oxytocin</strong>, evaluate retained tissue/laceration</div><div class="dxf"><span class="dxl">Think 4 Ts</span><strong>Tone</strong> (uterine atony, most common), Trauma, Tissue, Thrombin</div><div class="dxf tx"><span class="dxl">Escalation</span>Additional uterotonics + <strong>tranexamic acid early</strong>; balloon tamponade/embolization/surgery if refractory</div><div class="dxf"><span class="dxl">Second-order</span>Uterotonic contraindications are frequently tested: <strong><u>methylergonovine → avoid HTN/preeclampsia; carboprost → avoid asthma</u></strong>.</div><div class="dxf warn"><span class="dxl">Pharm traps</span><strong><u>Avoid methylergonovine in HTN/preeclampsia</u></strong>; <strong><u>avoid carboprost in asthma</u></strong></div></div>
 <table><tr><th>Emergency</th><th>Immediate maneuver</th></tr>
 <tr><td>Shoulder dystocia</td><td><strong><strong><u>McRoberts + suprapubic pressure</u></strong></strong>; <strong><u>no fundal pressure</u></strong></td></tr>
 <tr><td>Prolapsed cord</td><td>Manually elevate presenting part, maternal positioning, emergent C-section</td></tr>
@@ -1552,11 +1469,11 @@
 <div class="card-title"><span class="dot dot-blue"></span>Toxidromes &amp; Antidotes <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <table>
 <tbody><tr><th>Toxidrome</th><th>Findings</th><th>Antidote/Tx</th></tr>
-<tr><td>Opioid</td><td><strong>Miosis</strong>, respiratory depression, ↓LOC</td><td>Naloxone</td></tr>
-<tr><td>Anticholinergic</td><td><strong>Mydriasis, dry flushed skin</strong>, urinary retention, hyperthermia, AMS</td><td>Physostigmine (severe)</td></tr>
+<tr><td>Opioid (fentanyl, heroin, oxycodone)</td><td><strong>Miosis</strong>, respiratory depression, ↓LOC</td><td>Naloxone</td></tr>
+<tr><td>Anticholinergic (diphenhydramine, atropine/scopolamine, TCAs<span class="drug-ex"> (e.g., amitriptyline, nortriptyline, imipramine)</span>)</td><td><strong>Mydriasis, dry flushed skin</strong>, urinary retention, hyperthermia, AMS</td><td>Physostigmine (severe)</td></tr>
 <tr><td>Cholinergic/organophosphate</td><td>DUMBELS/SLUDGE: diarrhea, urination, miosis, bradycardia, bronchorrhea, emesis, lacrimation, salivation, fasciculations</td><td>Atropine + pralidoxime</td></tr>
-<tr><td>Sympathomimetic</td><td>Mydriasis, tachycardia, HTN, hyperthermia, agitation, <u>diaphoresis (wet, unlike anticholinergic)</u></td><td>Benzodiazepines; avoid unopposed beta blockade</td></tr>
-<tr><td>Sedative-hypnotic</td><td>Sedation, resp depression, normal pupils</td><td>Flumazenil (caution — seizure risk)</td></tr>
+<tr><td>Sympathomimetic (cocaine, amphetamine/methamphetamine)</td><td>Mydriasis, tachycardia, HTN, hyperthermia, agitation, <u>diaphoresis (wet, unlike anticholinergic)</u></td><td>Benzodiazepines<span class="drug-ex"> (e.g., lorazepam, diazepam, midazolam)</span>; avoid unopposed beta blockade</td></tr>
+<tr><td>Sedative-hypnotic (benzodiazepines, barbiturates)</td><td>Sedation, resp depression, normal pupils</td><td>Flumazenil (caution — seizure risk)</td></tr>
 </tbody></table>
 <div class="dxcard">
 <div class="dxcard-name">Amphetamine / methamphetamine toxicity</div>
@@ -1566,45 +1483,31 @@
 <div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Hyperthermia is from excess muscle activity/catecholamines, not a hypothalamic fever set-point</u></strong> → antipyretics do not fix it. Severe persistent hypertension may require a titratable vasodilator after sedation.</div>
 </div>
 <div class="dxcard">
-<div class="dxcard-name">Acetaminophen overdose</div><div class="dxf"><span class="dxl">Mechanism / why</span>Normal conjugation pathways saturate → CYP metabolism generates <strong>NAPQI</strong>; glutathione depletion allows hepatic injury.</div><div class="dxf"><span class="dxl">Second-order</span><strong>N-acetylcysteine replenishes glutathione</strong>; use the Rumack-Matthew nomogram for appropriate single acute ingestions with a known time.</div>
-<div class="dxf"><span class="dxl">Stem clues / setup</span>Intentional single large ingestion (common in suicide attempts) <u>or chronic supratherapeutic use</u> — <strong>chronic alcoholics/malnourished patients are toxic at lower levels</strong> (depleted glutathione stores)</div>
-<div class="dxf"><span class="dxl">Recognize</span>Often asymptomatic early; <strong>day 2-3 hepatotoxicity</strong> (RUQ pain, elevated LFTs)</div>
-<div class="dxf test"><span class="dxl">Best test</span>Acetaminophen level at <u>4h post-ingestion</u> plotted on the <strong>Rumack-Matthew nomogram</strong><span class="eponym"> — a chart that predicts hepatotoxicity risk from level and time since ingestion</span></div>
-<div class="dxf tx"><span class="dxl">Antidote</span><strong>N-acetylcysteine</strong> — start if level is above the treatment line, don't wait for symptoms</div>
-</div>
+<div class="dxcard-name">Acetaminophen overdose</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Normal conjugation pathways saturate → CYP metabolism generates <strong>NAPQI</strong>; glutathione depletion allows hepatic injury.</div><div class="dxf"><span class="dxl">Stem clues / setup</span>Intentional single large ingestion (common in suicide attempts) <u>or chronic supratherapeutic use</u> — <strong>chronic alcoholics/malnourished patients are toxic at lower levels</strong> (depleted glutathione stores)</div><div class="dxf"><span class="dxl">Recognize</span>Often asymptomatic early; <strong>day 2-3 hepatotoxicity</strong> (RUQ pain, elevated LFTs)</div><div class="dxf test"><span class="dxl">Best test</span>Acetaminophen level at <u>4h post-ingestion</u> plotted on the <strong>Rumack-Matthew nomogram</strong><span class="eponym"> — a chart that predicts hepatotoxicity risk from level and time since ingestion</span></div><div class="dxf tx"><span class="dxl">Antidote</span><strong>N-acetylcysteine</strong> — start if level is above the treatment line, don't wait for symptoms</div><div class="dxf"><span class="dxl">Second-order</span><strong>N-acetylcysteine replenishes glutathione</strong>; use the Rumack-Matthew nomogram for appropriate single acute ingestions with a known time.</div></div>
 <div class="dxcard">
-<div class="dxcard-name">TCA overdose</div><div class="dxf"><span class="dxl">Mechanism / why</span><strong>Fast sodium-channel blockade</strong> slows ventricular depolarization → wide QRS/arrhythmia; antimuscarinic and α-blocking effects add AMS/hypotension.</div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Sodium bicarbonate</u></strong> is indicated for QRS widening, ventricular dysrhythmia, or significant hypotension.</div>
-<div class="dxf"><span class="dxl">Stem clues / setup</span>Older antidepressant prescription in the household (often a family member's) — <u>intentional ingestion</u>, narrow therapeutic index</div>
-<div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Wide QRS</u></strong>, anticholinergic signs, seizures, hypotension</div>
-<div class="dxf tx"><span class="dxl">Antidote</span><strong>Sodium bicarbonate</strong> — narrows the QRS and reduces arrhythmia risk</div>
-</div>
-<table>
-<tbody><tr><th>Toxin</th><th>Presentation</th><th>Antidote</th></tr>
-<tr><td>Salicylates</td><td>Tinnitus, mixed resp alkalosis/metabolic acidosis</td><td>Charcoal early → sodium bicarb → dialysis if severe</td></tr>
-<tr><td>Beta blockers</td><td>Bradycardia, hypotension, hypoglycemia</td><td>Glucagon; high-dose insulin/euglycemia</td></tr>
-<tr><td>CCBs</td><td>Bradycardia, hypotension, <u>hyperglycemia</u></td><td>Calcium, high-dose insulin/euglycemia</td></tr>
-<tr><td>Digoxin</td><td>Visual changes, arrhythmias, hyperkalemia</td><td>Digoxin immune Fab</td></tr>
-<tr><td>Methanol/ethylene glycol</td><td><strong>Anion gap + osmolar gap acidosis</strong></td><td>Fomepizole → dialysis</td></tr>
-<tr><td>Iron</td><td>GI bleed → latent period → shock/hepatotoxicity</td><td>Deferoxamine</td></tr>
-<tr><td>Cyanide</td><td>Bitter almond breath, lactic acidosis</td><td>Hydroxocobalamin ± sodium thiosulfate</td></tr>
-<tr><td>Methemoglobinemia</td><td><strong>Cyanosis unresponsive to O2</strong></td><td>Methylene blue (avoid in G6PD deficiency)</td></tr>
+<div class="dxcard-name">TCA overdose (amitriptyline, nortriptyline, imipramine)</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span><strong>Fast sodium-channel blockade</strong> slows ventricular depolarization → wide QRS/arrhythmia; antimuscarinic and α-blocking effects add AMS/hypotension.</div><div class="dxf"><span class="dxl">Stem clues / setup</span>Older antidepressant prescription in the household (often a family member's) — <u>intentional ingestion</u>, narrow therapeutic index</div><div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Wide QRS</u></strong>, anticholinergic signs, seizures, hypotension</div><div class="dxf tx"><span class="dxl">Antidote</span><strong>Sodium bicarbonate</strong> — narrows the QRS and reduces arrhythmia risk</div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Sodium bicarbonate</u></strong> is indicated for QRS widening, ventricular dysrhythmia, or significant hypotension.</div></div>
+<table><tbody>
+<tr><th>Toxin / examples</th><th>Presentation / discriminator</th><th>Key management</th></tr>
+<tr><td><strong>Salicylates</strong> (aspirin, bismuth subsalicylate)</td><td><strong>Tinnitus + tachypnea</strong>, N/V, diaphoresis/fever, AMS; <u>mixed respiratory alkalosis + anion-gap metabolic acidosis</u></td><td>Activated charcoal when appropriate → <strong>serum/urine alkalinization with sodium bicarbonate</strong> → dialysis if severe</td></tr>
+<tr><td><strong>Beta blockers<span class="drug-ex"> (e.g., metoprolol, propranolol, labetalol)</span></strong> (propranolol, metoprolol)</td><td><strong>Bradycardia + hypotension</strong>; hypoglycemia; bronchospasm. Propranolol may cause seizures/QRS widening</td><td>Glucagon + <strong>high-dose insulin/euglycemia</strong>; vasopressors as needed</td></tr>
+<tr><td><strong>Calcium-channel blockers</strong> (verapamil, diltiazem; amlodipine)</td><td>Bradycardia/AV block with non-DHP agents, profound hypotension/shock; <strong><u>hyperglycemia</u></strong> is a classic clue</td><td>IV calcium + <strong>high-dose insulin/euglycemia</strong> + vasopressors</td></tr>
+<tr><td><strong>Digoxin</strong></td><td>N/V, weakness/confusion, <u>yellow-green visual changes</u>, brady- or tachydysrhythmias; acute severe toxicity may cause <strong>hyperkalemia</strong></td><td><strong>Digoxin immune Fab</strong> for life-threatening dysrhythmia, significant hyperK, or severe toxicity</td></tr>
+<tr><td><strong>Methanol</strong> (windshield-washer fluid, solvents)</td><td>Inebriation → <strong>visual blurring/“snowfield” vision</strong> + severe AG metabolic acidosis; early osmolar gap</td><td><strong>Fomepizole</strong> ± dialysis</td></tr>
+<tr><td><strong>Ethylene glycol</strong> (antifreeze)</td><td>Inebriation → tachypnea/cardiopulmonary phase → <strong>AKI, flank pain, hypocalcemia</strong>; calcium-oxalate crystals; AG + osmolar gaps</td><td><strong>Fomepizole</strong> ± dialysis</td></tr>
+<tr><td><strong>Iron</strong></td><td><strong>Hemorrhagic gastroenteritis</strong> → deceptive latent period → shock/metabolic acidosis → hepatotoxicity</td><td><strong>Deferoxamine</strong> for significant systemic toxicity/high levels</td></tr>
+<tr><td><strong>Cyanide</strong> (enclosed-space fire, industrial exposure)</td><td>Rapid collapse, AMS/seizures, hypotension; <strong>profound lactic acidosis</strong> disproportionate to findings; bitter-almond odor is unreliable</td><td><strong>Hydroxocobalamin</strong> ± sodium thiosulfate</td></tr>
+<tr><td><strong>Methemoglobinemia</strong> (benzocaine, nitrates, dapsone)</td><td><strong>Cyanosis that does not correct with O₂</strong>, headache/dyspnea/AMS; <u>chocolate-brown blood + saturation gap</u></td><td><strong>Methylene blue</strong> (avoid/caution in G6PD deficiency)</td></tr>
 </tbody></table>
 <div class="dxcard">
-<div class="dxcard-name">Carbon monoxide poisoning</div><div class="dxf"><span class="dxl">Mechanism / why</span>CO binds hemoglobin with very high affinity and shifts remaining oxyhemoglobin left → <strong>impaired O₂ content + impaired tissue unloading</strong>.</div><div class="dxf"><span class="dxl">Second-order</span>Pulse oximetry can look normal; diagnose with <u>co-oximetry/carboxyhemoglobin</u>. Treat immediately with 100% oxygen and consider hyperbaric therapy for severe presentations.</div>
-<div class="dxf"><span class="dxl">Stem clues / setup</span><strong>House fire</strong>, <u>malfunctioning heater/furnace</u>, <u>generator used indoors/enclosed space</u>, <strong>multiple household members with similar nonspecific symptoms</strong> — especially in winter</div>
-<div class="dxf"><span class="dxl">Presentation</span>Headache, dizziness, nausea, confusion, syncope; cardiac ischemia in severe poisoning. <u>Classic "cherry-red skin" is rarely seen clinically</u> — don't rely on it for recognition</div>
-<div class="dxf warn"><span class="dxl">Testing</span><strong><u>Standard pulse oximetry is falsely normal</u></strong> — cannot distinguish carboxyhemoglobin from oxyhemoglobin; obtain a <strong>co-oximetry/carboxyhemoglobin level</strong></div>
-<div class="dxf tx"><span class="dxl">Management</span><strong>100% high-flow O2</strong>; hyperbaric O2 for severe poisoning (LOC, neuro deficits, pregnancy with significant levels, cardiac ischemia)</div>
-</div>
+<div class="dxcard-name">Carbon monoxide poisoning</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>CO binds hemoglobin with very high affinity and shifts remaining oxyhemoglobin left → <strong>impaired O₂ content + impaired tissue unloading</strong>.</div><div class="dxf"><span class="dxl">Stem clues / setup</span><strong>House fire</strong>, <u>malfunctioning heater/furnace</u>, <u>generator used indoors/enclosed space</u>, <strong>multiple household members with similar nonspecific symptoms</strong> — especially in winter</div><div class="dxf"><span class="dxl">Presentation</span>Headache, dizziness, nausea, confusion, syncope; cardiac ischemia in severe poisoning. <u>Classic "cherry-red skin" is rarely seen clinically</u> — don't rely on it for recognition</div><div class="dxf warn"><span class="dxl">Testing</span><strong><u>Standard pulse oximetry is falsely normal</u></strong> — cannot distinguish carboxyhemoglobin from oxyhemoglobin; obtain a <strong>co-oximetry/carboxyhemoglobin level</strong></div><div class="dxf tx"><span class="dxl">Management</span><strong>100% high-flow O2</strong>; hyperbaric O2 for severe poisoning (LOC, neuro deficits, pregnancy with significant levels, cardiac ischemia)</div><div class="dxf"><span class="dxl">Second-order</span>Pulse oximetry can look normal; diagnose with <u>co-oximetry/carboxyhemoglobin</u>. Treat immediately with 100% oxygen and consider hyperbaric therapy for severe presentations.</div></div>
 <div class="kp rose"><span class="kp-label">Board trap</span><strong><u>Pulse ox is falsely normal in both CO poisoning and methemoglobinemia</u></strong> — need co-oximetry.</div>
 <div class="sub">Caustic ingestion</div>
 <div class="dxcard">
-<div class="dxcard-name">Acid / alkali ingestion</div><div class="dxf"><span class="dxl">Mechanism / why</span>Caustics cause tissue necrosis: <strong>alkalis classically liquefactive</strong> injury with deeper penetration; acids classically cause coagulative necrosis.</div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Do not induce emesis or neutralize</u></strong>; early airway assessment and endoscopic evaluation are central when significant injury is suspected.</div>
-<div class="dxf"><span class="dxl">Mechanism</span><strong>Alkalis → liquefactive necrosis</strong> with deeper tissue penetration; acids classically cause coagulative necrosis. Either can cause devastating esophageal/gastric injury.</div>
-<div class="dxf"><span class="dxl">Recognize</span>Drooling, dysphagia/odynophagia, oral burns, chest/abdominal pain, stridor, hematemesis; <u>absence of oral burns does not exclude serious esophageal injury</u>.</div>
-<div class="dxf warn"><span class="dxl">Do NOT</span><strong><u>Do not induce emesis, attempt neutralization, or give activated charcoal</u></strong>. Secure a threatened airway early; do not blindly pass an NG tube.</div>
-<div class="dxf test"><span class="dxl">Evaluation</span>Intentional or symptomatic significant ingestion → GI/toxicology consultation and <strong>early endoscopic evaluation</strong> when appropriate; signs of perforation/necrosis require emergent surgical evaluation.</div>
-</div>
+<div class="dxcard-name">Acid / alkali ingestion</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Caustics cause tissue necrosis: <strong>alkalis classically liquefactive</strong> injury with deeper penetration; acids classically cause coagulative necrosis.</div><div class="dxf"><span class="dxl">Mechanism</span><strong>Alkalis → liquefactive necrosis</strong> with deeper tissue penetration; acids classically cause coagulative necrosis. Either can cause devastating esophageal/gastric injury.</div><div class="dxf"><span class="dxl">Recognize</span>Drooling, dysphagia/odynophagia, oral burns, chest/abdominal pain, stridor, hematemesis; <u>absence of oral burns does not exclude serious esophageal injury</u>.</div><div class="dxf test"><span class="dxl">Evaluation</span>Intentional or symptomatic significant ingestion → GI/toxicology consultation and <strong>early endoscopic evaluation</strong> when appropriate; signs of perforation/necrosis require emergent surgical evaluation.</div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Do not induce emesis or neutralize</u></strong>; early airway assessment and endoscopic evaluation are central when significant injury is suspected.</div><div class="dxf warn"><span class="dxl">Do NOT</span><strong><u>Do not induce emesis, attempt neutralization, or give activated charcoal</u></strong>. Secure a threatened airway early; do not blindly pass an NG tube.</div></div>
 <div class="sub">Heavy metals — lead vs mercury</div>
 <table><tbody><tr><th>Toxin</th><th>Mechanism / recognition</th><th>High-yield management</th></tr>
 <tr><td><strong>Lead</strong></td><td>Disrupts heme synthesis + neurotoxicity → <strong>abdominal colic/constipation</strong>, cognitive/behavior change, peripheral neuropathy (<u>wrist/foot drop</u>), microcytic anemia with <strong>basophilic stippling</strong>; severe exposure → encephalopathy/seizures</td><td><strong>Remove exposure + blood lead level.</strong> Chelation for severe/markedly elevated exposure: <u>succimer</u> for many non-encephalopathic cases; severe encephalopathy/high levels may require <strong>dimercaprol + CaNa2-EDTA</strong> with toxicology guidance.</td></tr>
@@ -1614,7 +1517,7 @@
 <div class="sub">Serotonin syndrome vs NMS</div>
 <table>
 <tbody><tr><th></th><th>Serotonin syndrome</th><th>NMS</th></tr>
-<tr><td>Cause</td><td>SSRIs/SNRIs/MAOIs</td><td>Antipsychotics</td></tr>
+<tr><td>Cause</td><td><strong>SSRIs<span class="drug-ex"> (e.g., sertraline, fluoxetine, escitalopram)</span></strong> (sertraline, fluoxetine, escitalopram), <strong>SNRIs<span class="drug-ex"> (e.g., venlafaxine, duloxetine)</span></strong> (venlafaxine, duloxetine), <strong>MAOIs<span class="drug-ex"> (e.g., phenelzine, tranylcypromine)</span></strong> (phenelzine, tranylcypromine)</td><td><strong>Antipsychotics<span class="drug-ex"> (e.g., haloperidol, olanzapine, risperidone)</span></strong> (haloperidol, risperidone, olanzapine)</td></tr>
 <tr><td>Onset</td><td><strong>Hours</strong></td><td><strong>Days</strong></td></tr>
 <tr><td>Exam</td><td><u>Hyperreflexia, clonus</u></td><td><u>Lead-pipe rigidity, hyporeflexia</u></td></tr>
 <tr><td>Tx</td><td>Cyproheptadine, benzos, cooling</td><td>Dantrolene, bromocriptine, stop drug</td></tr>
@@ -1657,13 +1560,8 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-rose"></span>Peri-Procedural Emergency — Malignant Hyperthermia <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Malignant hyperthermia</div><div class="dxf"><span class="dxl">Mechanism / why</span>Usually RYR1-related uncontrolled sarcoplasmic-reticulum Ca²⁺ release after triggering anesthetics → <strong>skeletal-muscle hypermetabolism</strong>.</div><div class="dxf"><span class="dxl">Second-order</span>Early clues are <u>rapidly rising ETCO₂, rigidity, tachycardia, acidosis, hyperkalemia</u>; hyperthermia may be later. Treat with <strong>dantrolene</strong>.</div>
-<div class="dxf"><span class="dxl">Stem clues / setup</span><strong>Recent general anesthesia</strong> with a triggering agent — <u>volatile inhaled anesthetics or succinylcholine</u>; may have a personal/family history of anesthesia complications</div>
-<div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Rapidly rising end-tidal CO2</u></strong> (earliest/most sensitive sign) + muscle rigidity + tachycardia; <u>hyperthermia can be a LATE finding</u> — don't wait for extreme fever if the intraoperative pattern is otherwise classic</div>
-<div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Stop the triggering agent immediately</u></strong> + hyperventilate with 100% O2 + begin cooling/supportive measures</div>
-<div class="dxf tx"><span class="dxl">Drug of choice</span><strong>Dantrolene</strong></div>
-<div class="dxf"><span class="dxl">Complication to anticipate</span>Hyperkalemia, rhabdomyolysis, arrhythmia, severe acidosis, AKI</div>
-</div>
+<div class="dxcard-name">Malignant hyperthermia</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Usually RYR1-related uncontrolled sarcoplasmic-reticulum Ca²⁺ release after triggering anesthetics → <strong>skeletal-muscle hypermetabolism</strong>.</div><div class="dxf"><span class="dxl">Stem clues / setup</span><strong>Recent general anesthesia</strong> with a triggering agent — <u>volatile inhaled anesthetics or succinylcholine</u>; may have a personal/family history of anesthesia complications</div><div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Rapidly rising end-tidal CO2</u></strong> (earliest/most sensitive sign) + muscle rigidity + tachycardia; <u>hyperthermia can be a LATE finding</u> — don't wait for extreme fever if the intraoperative pattern is otherwise classic</div><div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Stop the triggering agent immediately</u></strong> + hyperventilate with 100% O2 + begin cooling/supportive measures</div><div class="dxf tx"><span class="dxl">Drug of choice</span><strong>Dantrolene</strong></div><div class="dxf"><span class="dxl">Second-order</span>Early clues are <u>rapidly rising ETCO₂, rigidity, tachycardia, acidosis, hyperkalemia</u>; hyperthermia may be later. Treat with <strong>dantrolene</strong>.</div><div class="dxf"><span class="dxl">Complication to anticipate</span>Hyperkalemia, rhabdomyolysis, arrhythmia, severe acidosis, AKI</div></div>
 </div>
 <div class="card">
 <div class="card-title"><span class="dot dot-violet"></span>Envenomation, Electrical Injury &amp; Blast Injury</div>
@@ -1702,7 +1600,8 @@
 <tr><td>Hydrofluoric acid</td><td>Severe pain, hypocalcemia/arrhythmia</td><td><strong>Calcium gluconate</strong> (topical/infiltrative/systemic depending exposure)</td></tr></table>
 <div class="src"><strong>Sources:</strong> American College of Medical Toxicology / AACT practice resources; AHA toxicology resuscitation guidance.</div>
 </div>
-<div class="kp teal"><span class="kp-label">Cross-system retrieval</span>Toxicology often masquerades as another system: <strong>TCA → wide-complex dysrhythmia</strong>, stimulants → ACS/hyperthermia, salicylates → mixed acid-base disorder, CO/cyanide → occult tissue hypoxia. Use the CV/Endocrine tabs when the physiology becomes the tested task.</div><div class="objective">One-liner: learn the toxidrome clusters and their specific antidotes/withdrawal patterns rather than memorizing isolated facts — most tox questions are pattern-matching.</div>
+<div class="kp teal"><span class="kp-label">Cross-system retrieval</span>Toxicology often masquerades as another system: <strong>TCA → wide-complex dysrhythmia</strong>, stimulants → ACS/hyperthermia, salicylates → mixed acid-base disorder, CO/cyanide → occult tissue hypoxia. Use the CV/Endocrine tabs when the physiology becomes the tested task.</div><div class="card"><div class="card-title"><span class="dot dot-green"></span>Cannabinoid Hyperemesis Syndrome <span class="tag tag-core">CORE</span></div>
+<div class="dxcard"><div class="dxcard-name">Cannabinoid hyperemesis syndrome</div><div class="dxf"><span class="dxl">Stem clues / setup</span>Chronic heavy cannabis use</div><div class="dxf"><span class="dxl">Recognize</span>Recurrent severe nausea/vomiting with abdominal discomfort and <strong><u>compulsive hot showers/bathing that temporarily relieve symptoms</u></strong></div><div class="dxf tx"><span class="dxl">Management</span>IV fluids/electrolyte correction and antiemetic therapy as needed; <strong>cannabis cessation is definitive</strong></div><div class="dxf warn"><span class="dxl">Board trap</span>Diagnosis of exclusion — do not keep escalating testing/antiemetics without recognizing the cannabis + hot-bathing pattern</div></div></div><div class="objective">One-liner: learn the toxidrome clusters and their specific antidotes/withdrawal patterns rather than memorizing isolated facts — most tox questions are pattern-matching.</div>
 </div>
 <!-- ====== ORTHO ====== -->
 <div class="sec" id="endo">
@@ -1718,17 +1617,13 @@
 <tr><td>Typical patient</td><td>T1DM, rapid onset, <u>Kussmaul breathing, fruity breath</u></td><td>T2DM, gradual, profound dehydration, neuro symptoms</td></tr>
 </tbody></table>
 <div class="dxcard">
-<div class="dxcard-name">DKA management sequence</div><div class="dxf"><span class="dxl">Mechanism / why</span>Absolute/relative insulin deficiency + counterregulatory hormones → <strong>lipolysis → ketone production → anion-gap metabolic acidosis</strong> plus osmotic diuresis.</div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Check potassium before insulin</u></strong>; total-body K⁺ is depleted even when serum potassium is initially normal/high.</div>
-<div class="dxf tx"><span class="dxl">Step 1</span><strong>Isotonic saline</strong> ~1L/hr → half-normal saline, add D5 once glucose &lt;200-250</div>
-<div class="dxf warn"><span class="dxl">Step 2 — board trap</span><strong><u>Check potassium before starting insulin</u></strong> — hold insulin if K+&lt;3.3 (fatal arrhythmia risk as K+ shifts intracellularly)</div>
-<div class="dxf tx"><span class="dxl">Step 3</span>Potassium repletion if ≤5.3</div>
-<div class="dxf tx"><span class="dxl">Step 4</span>Bicarb <u>only if pH&lt;6.9</u></div>
-</div>
+<div class="dxcard-name">DKA management sequence</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Absolute/relative insulin deficiency + counterregulatory hormones → <strong>lipolysis → ketone production → anion-gap metabolic acidosis</strong> plus osmotic diuresis.</div><div class="dxf tx"><span class="dxl">Step 1</span><strong>Isotonic saline</strong> ~1L/hr → half-normal saline, add D5 once glucose &lt;200-250</div><div class="dxf tx"><span class="dxl">Step 3</span>Potassium repletion if ≤5.3</div><div class="dxf tx"><span class="dxl">Step 4</span>Bicarb <u>only if pH&lt;6.9</u></div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Check potassium before insulin</u></strong>; total-body K⁺ is depleted even when serum potassium is initially normal/high.</div><div class="dxf warn"><span class="dxl">Step 2 — board trap</span><strong><u>Check potassium before starting insulin</u></strong> — hold insulin if K+&lt;3.3 (fatal arrhythmia risk as K+ shifts intracellularly)</div></div>
 </div>
 <div class="card">
 <div class="card-title"><span class="dot dot-teal"></span>Hypoglycemia &amp; Hyperkalemia ECG Staging <span class="tag tag-hy">HIGH YIELD</span></div>
 <div class="sub">Hypoglycemia causes</div>
-<p>Insulin/sulfonylurea excess (most common in diabetics), fasting/malnutrition, alcohol use (impairs gluconeogenesis), sepsis, adrenal insufficiency. Tx: oral glucose if awake; <strong>D50 IV or glucagon IM</strong> if unconscious/no IV access.</p>
+<p>Insulin/sulfonylurea (glipizide, glyburide) excess (most common in diabetics), fasting/malnutrition, alcohol use (impairs gluconeogenesis), sepsis, adrenal insufficiency. Tx: oral glucose if awake; <strong>D50 IV or glucagon IM</strong> if unconscious/no IV access.</p>
 <div class="sub">Hyperkalemia — ECG progression</div>
 <table>
 <tbody><tr><th>K+ level</th><th>ECG finding</th></tr>
@@ -1748,11 +1643,8 @@
 <tr><td>Management</td><td>Beta blocker for symptom control + antithyroid drug (methimazole); outpatient in stable disease</td><td>See dxcard below — <u>emergent, inpatient, strict sequence</u></td></tr>
 </tbody></table>
 <div class="dxcard">
-<div class="dxcard-name">Thyroid storm</div><div class="dxf"><span class="dxl">Mechanism / why</span>Extreme thyrotoxicosis with marked <strong>β-adrenergic sensitivity</strong> and systemic decompensation, often triggered by infection/surgery/medication interruption.</div><div class="dxf"><span class="dxl">Second-order</span>Sequence matters: <strong>β-block → thionamide → iodine after thionamide → steroid</strong> plus supportive care and trigger treatment.</div>
-<div class="dxf"><span class="dxl">Recognize</span>Fever up to 106°F, tachycardia/arrhythmia, AMS; precipitated by infection/surgery/trauma/iodine load</div>
-<div class="dxf tx"><span class="dxl">Management sequence</span><strong>Beta blocker (propranolol)</strong> → <strong>PTU/methimazole</strong> → <strong><u>iodine (ONLY after thionamide)</u></strong> → glucocorticoids → treat precipitating cause</div>
-<div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Giving iodine BEFORE a thionamide is a fatal-sequence error</u></strong> — iodine given first can transiently worsen thyrotoxicosis (Jod-Basedow effect) by providing substrate for new hormone synthesis before the gland is blocked</div>
-</div>
+<div class="dxcard-name">Thyroid storm</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Extreme thyrotoxicosis with marked <strong>β-adrenergic sensitivity</strong> and systemic decompensation, often triggered by infection/surgery/medication interruption.</div><div class="dxf"><span class="dxl">Recognize</span>Fever up to 106°F, tachycardia/arrhythmia, AMS; precipitated by infection/surgery/trauma/iodine load</div><div class="dxf tx"><span class="dxl">Management sequence</span><strong>Beta blocker (propranolol)</strong> → <strong>PTU/methimazole</strong> → <strong><u>iodine (ONLY after thionamide)</u></strong> → glucocorticoids → treat precipitating cause</div><div class="dxf"><span class="dxl">Second-order</span>Sequence matters: <strong>β-block → thionamide → iodine after thionamide → steroid</strong> plus supportive care and trigger treatment.</div><div class="dxf warn"><span class="dxl">Board trap</span><strong><u>Giving iodine BEFORE a thionamide is a fatal-sequence error</u></strong> — iodine given first can transiently worsen thyrotoxicosis (Jod-Basedow effect) by providing substrate for new hormone synthesis before the gland is blocked</div></div>
 <div class="dxcard">
 <div class="dxcard-name">Pheochromocytoma crisis</div>
 <div class="dxf"><span class="dxl">Recognize</span>Episodic HTN, headache, palpitations, diaphoresis</div>
@@ -1820,18 +1712,11 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-slate"></span>True Orthopedic Emergencies <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Compartment syndrome</div><div class="dxf"><span class="dxl">Mechanism / why</span>Rising pressure inside a closed fascial compartment reduces capillary perfusion → <strong>muscle/nerve ischemia</strong>.</div><div class="dxf"><span class="dxl">Second-order</span><u>Pain out of proportion + pain with passive stretch</u> are early; pulselessness is late. Definitive treatment is emergent fasciotomy.</div>
-<div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Pain out of proportion</u></strong> to injury, pain with passive stretch — <u>earliest sign</u>; the 6 P's (pallor, paresthesia, poikilothermia, pulselessness, paralysis) are LATE</div>
-<div class="dxf test"><span class="dxl">Best/confirmatory test</span><strong>Clinical diagnosis</strong>; needle manometry (compartment pressure &gt;30mmHg or within 30 of diastolic BP) confirms if uncertain</div>
-<div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Emergent fasciotomy</u></strong> — don't wait for pulselessness to act</div>
-<div class="dxf"><span class="dxl">Complication to anticipate</span><strong>Rhabdomyolysis → AKI</strong>; delayed fasciotomy risks permanent limb loss</div>
-</div>
+<div class="dxcard-name">Compartment syndrome</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Rising pressure inside a closed fascial compartment reduces capillary perfusion → <strong>muscle/nerve ischemia</strong>.</div><div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Pain out of proportion</u></strong> to injury, pain with passive stretch — <u>earliest sign</u>; the 6 P's (pallor, paresthesia, poikilothermia, pulselessness, paralysis) are LATE</div><div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Emergent fasciotomy</u></strong> — don't wait for pulselessness to act</div><div class="dxf test"><span class="dxl">Best/confirmatory test</span><strong>Clinical diagnosis</strong>; needle manometry (compartment pressure &gt;30mmHg or within 30 of diastolic BP) confirms if uncertain</div><div class="dxf"><span class="dxl">Second-order</span><u>Pain out of proportion + pain with passive stretch</u> are early; pulselessness is late. Definitive treatment is emergent fasciotomy.</div><div class="dxf"><span class="dxl">Complication to anticipate</span><strong>Rhabdomyolysis → AKI</strong>; delayed fasciotomy risks permanent limb loss</div></div>
 <div class="dxcard">
-<div class="dxcard-name">Septic arthritis</div><div class="dxf"><span class="dxl">Mechanism / why</span>Usually hematogenous bacterial seeding causes destructive synovial inflammation; cartilage injury can occur rapidly.</div><div class="dxf"><span class="dxl">Second-order</span><strong>Arthrocentesis</strong> is the key diagnostic step; do not let a serum uric acid level or history of gout exclude infection.</div>
-<div class="dxf"><span class="dxl">Recognize</span>Acute monoarticular pain/fever, ↓ROM — <u>knee most common</u></div>
-<div class="dxf test"><span class="dxl">Best/confirmatory test</span><strong>Arthrocentesis</strong> (WBC&gt;50,000 concerning) + gram stain/culture</div>
-<div class="dxf tx"><span class="dxl">Management</span>Empiric IV abx + <strong><u>emergent surgical washout</u></strong></div>
-</div>
+<div class="dxcard-name">Septic arthritis</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Usually hematogenous bacterial seeding causes destructive synovial inflammation; cartilage injury can occur rapidly.</div><div class="dxf"><span class="dxl">Recognize</span>Acute monoarticular pain/fever, ↓ROM — <u>knee most common</u></div><div class="dxf test"><span class="dxl">Best/confirmatory test</span><strong>Arthrocentesis</strong> (WBC&gt;50,000 concerning) + gram stain/culture</div><div class="dxf tx"><span class="dxl">Management</span>Empiric IV abx + <strong><u>emergent surgical washout</u></strong></div><div class="dxf"><span class="dxl">Second-order</span><strong>Arthrocentesis</strong> is the key diagnostic step; do not let a serum uric acid level or history of gout exclude infection.</div></div>
 <table>
 <tbody><tr><th>Dx</th><th>Key features</th><th>Management</th></tr>
 <tr><td>Cauda equina</td><td><strong><u><strong><u>Saddle anesthesia</u></strong></u></strong>, bowel/bladder dysfunction, bilateral leg weakness</td><td><strong>Emergent MRI</strong> → surgical decompression &lt;24-48h</td></tr>
@@ -1857,7 +1742,7 @@
 <tbody><tr><th>Dx</th><th>Key features</th><th>Management</th></tr>
 <tr><td>Radiculopathy</td><td><strong>Dermatomal pain/numbness</strong>, <u>positive straight leg raise</u>; disc herniation most common cause</td><td>Conservative (NSAIDs, PT) unless progressive deficit</td></tr>
 <tr><td>Spinal stenosis</td><td><strong><u>Neurogenic claudication</u></strong> — pain worse standing/walking, relieved by sitting/flexion (leaning on a shopping cart)</td><td>Conservative; surgery if refractory</td></tr>
-<tr><td>Vascular claudication</td><td>Pain with walking, relieved by <u>rest alone</u> (no positional/flexion component) — vs neurogenic claudication above</td><td>Risk factor modification; vascular workup</td></tr>
+<tr><td>Vascular claudication</td><td>Pain with walking relieved by <u>rest alone</u> (no flexion dependence); diminished pulses/cool skin favor vascular disease</td><td>See <strong>Cardiovascular → PAD &amp; Claudication</strong> for ABI and treatment pathway</td></tr>
 <tr><td>Ankylosing spondylitis</td><td>Young male, <strong>inflammatory back pain</strong> — <u>morning stiffness that improves with activity</u>, sacroiliac involvement</td><td>NSAIDs first-line; refer rheumatology</td></tr>
 </tbody></table>
 <div class="kp"><span class="kp-label">Pearl</span>General back-pain red flags that mandate imaging/urgent workup: age &gt;50 with new pain, fever, IVDU, unexplained weight loss, trauma, saddle anesthesia, bowel/bladder dysfunction, progressive neuro deficit.</div>
@@ -1889,16 +1774,11 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-blue"></span>Hematology / Oncology Emergencies <span class="tag tag-hy">HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Acute chest syndrome (sickle cell)</div><div class="dxf"><span class="dxl">Mechanism / why</span>Pulmonary vaso-occlusion from infection, fat emboli, or sickling causes <strong>new infiltrate + respiratory symptoms</strong> and can worsen rapidly.</div><div class="dxf"><span class="dxl">Second-order</span>Treat with oxygen as needed, analgesia, antibiotics, incentive spirometry, and transfusion when severe; avoid over-resuscitation.</div>
-<div class="dxf warn"><span class="dxl">Recognize</span>Sickle cell patient with <strong>new infiltrate on CXR + hypoxia + chest pain/fever</strong> — <u>leading cause of death in sickle cell disease</u></div>
-<div class="dxf tx"><span class="dxl">Management</span>O2, incentive spirometry, analgesia, empiric abx (cover atypicals); <strong><u>exchange transfusion</u></strong> if severe/worsening</div>
-</div>
+<div class="dxcard-name">Acute chest syndrome (sickle cell)</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Pulmonary vaso-occlusion from infection, fat emboli, or sickling causes <strong>new infiltrate + respiratory symptoms</strong> and can worsen rapidly.</div><div class="dxf warn"><span class="dxl">Recognize</span>Sickle cell patient with <strong>new infiltrate on CXR + hypoxia + chest pain/fever</strong> — <u>leading cause of death in sickle cell disease</u></div><div class="dxf tx"><span class="dxl">Management</span>O2, incentive spirometry, analgesia, empiric abx (cover atypicals); <strong><u>exchange transfusion</u></strong> if severe/worsening</div><div class="dxf"><span class="dxl">Second-order</span>Treat with oxygen as needed, analgesia, antibiotics, incentive spirometry, and transfusion when severe; avoid over-resuscitation.</div></div>
 <div class="dxcard">
-<div class="dxcard-name">Tumor lysis syndrome</div><div class="dxf"><span class="dxl">Mechanism / why</span>Rapid tumor-cell breakdown releases <strong>K⁺, phosphate, and nucleic acids → uric acid</strong>; phosphate binds calcium.</div><div class="dxf"><span class="dxl">Second-order</span>Expect <u>hyperK, hyperphos, hypocalcemia, hyperuricemia, AKI</u>; treat aggressively with fluids and urate-lowering therapy when indicated.</div>
-<div class="dxf"><span class="dxl">Recognize</span><strong>↑K, ↑phos, ↑uric acid, ↓Ca</strong> — hours to days after chemo, high-bulk hematologic malignancies</div>
-<div class="dxf tx"><span class="dxl">Best initial step</span><strong><u>Aggressive IV fluids</u></strong> before/during chemo in high-risk patients (prevention &gt; treatment)</div>
-<div class="dxf tx"><span class="dxl">Definitive treatment</span>Rasburicase (fast-acting) or allopurinol (prophylaxis); dialysis if refractory hyperkalemia</div>
-</div>
+<div class="dxcard-name">Tumor lysis syndrome</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Rapid tumor-cell breakdown releases <strong>K⁺, phosphate, and nucleic acids → uric acid</strong>; phosphate binds calcium.</div><div class="dxf"><span class="dxl">Recognize</span><strong>↑K, ↑phos, ↑uric acid, ↓Ca</strong> — hours to days after chemo, high-bulk hematologic malignancies</div><div class="dxf tx"><span class="dxl">Best initial step</span><strong><u>Aggressive IV fluids</u></strong> before/during chemo in high-risk patients (prevention &gt; treatment)</div><div class="dxf tx"><span class="dxl">Definitive treatment</span>Rasburicase (fast-acting) or allopurinol (prophylaxis); dialysis if refractory hyperkalemia</div><div class="dxf"><span class="dxl">Second-order</span>Expect <u>hyperK, hyperphos, hypocalcemia, hyperuricemia, AKI</u>; treat aggressively with fluids and urate-lowering therapy when indicated.</div></div>
 <table>
 <tbody><tr><th>Dx</th><th>Key features</th><th>Management</th></tr>
 <tr><td>Neutropenic fever</td><td><strong><u>ANC&lt;500 + fever</u></strong></td><td><strong>Empiric <strong>broad-spectrum abx within 1h</strong></strong></td></tr>
@@ -1930,11 +1810,8 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-rose"></span>Thrombocytopenia — ITP vs TTP vs HIT <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">TTP (thrombotic thrombocytopenic purpura)</div><div class="dxf"><span class="dxl">Mechanism / why</span>Severe <strong>ADAMTS13 deficiency</strong> → uncleaved ultra-large vWF multimers → platelet-rich microthrombi → MAHA + thrombocytopenia.</div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Plasma exchange urgently</u></strong>; do not wait for ADAMTS13 results when clinical suspicion is high.</div>
-<div class="dxf warn"><span class="dxl">Recognize</span><strong>Thrombocytopenia + microangiopathic hemolytic anemia</strong> (schistocytes) ± neuro changes, renal failure, fever — <u>this is a medical emergency</u></div>
-<div class="dxf tx"><span class="dxl">Best initial step</span><strong><u>Emergent plasma exchange</u></strong> — don't wait on confirmatory ADAMTS13 testing to start</div>
-<div class="dxf warn"><span class="dxl">Do NOT</span><strong><u>Avoid platelet transfusion unless life-threatening bleeding</u></strong> — can worsen microthrombosis</div>
-</div>
+<div class="dxcard-name">TTP (thrombotic thrombocytopenic purpura)</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Severe <strong>ADAMTS13 deficiency</strong> → uncleaved ultra-large vWF multimers → platelet-rich microthrombi → MAHA + thrombocytopenia.</div><div class="dxf warn"><span class="dxl">Recognize</span><strong>Thrombocytopenia + microangiopathic hemolytic anemia</strong> (schistocytes) ± neuro changes, renal failure, fever — <u>this is a medical emergency</u></div><div class="dxf tx"><span class="dxl">Best initial step</span><strong><u>Emergent plasma exchange</u></strong> — don't wait on confirmatory ADAMTS13 testing to start</div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Plasma exchange urgently</u></strong>; do not wait for ADAMTS13 results when clinical suspicion is high.</div><div class="dxf warn"><span class="dxl">Do NOT</span><strong><u>Avoid platelet transfusion unless life-threatening bleeding</u></strong> — can worsen microthrombosis</div></div>
 <table>
 <tbody><tr><th></th><th>ITP</th><th>HIT</th></tr>
 <tr><td>Mechanism</td><td>Autoimmune platelet destruction</td><td>Heparin-induced antibody → platelet activation</td></tr>
@@ -1946,11 +1823,8 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-slate"></span>Bleeding Disorders — Hemophilia vs von Willebrand vs Platelet Disorder <span class="tag tag-hy">HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Hemophilia A/B</div><div class="dxf"><span class="dxl">Mechanism / why</span>Factor VIII (A) or IX (B) deficiency impairs the <strong>intrinsic coagulation pathway</strong> → deep tissue/joint bleeding with prolonged PTT.</div><div class="dxf"><span class="dxl">Second-order</span>Platelet count and PT are usually normal; treat significant bleeding with <strong>specific factor replacement</strong> (and DDAVP in selected mild hemophilia A).</div>
-<div class="dxf"><span class="dxl">Recognize</span><strong>Hemophilia A</strong> = factor VIII deficiency; <strong>Hemophilia B</strong> = factor IX deficiency — X-linked, males; <u>deep tissue/joint bleeding</u> (hemarthroses), severe bleeding after trauma/procedure</div>
-<div class="dxf test"><span class="dxl">Lab pattern</span><strong><u>Isolated prolonged PTT</u></strong>, normal PT, normal platelet count</div>
-<div class="dxf tx"><span class="dxl">Treatment</span><strong>Replace the deficient factor</strong> (factor VIII or IX concentrate) — do this <u>before</u> any invasive procedure/imaging delay in suspected severe deficiency with acute bleeding</div>
-</div>
+<div class="dxcard-name">Hemophilia A/B</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Factor VIII (A) or IX (B) deficiency impairs the <strong>intrinsic coagulation pathway</strong> → deep tissue/joint bleeding with prolonged PTT.</div><div class="dxf"><span class="dxl">Recognize</span><strong>Hemophilia A</strong> = factor VIII deficiency; <strong>Hemophilia B</strong> = factor IX deficiency — X-linked, males; <u>deep tissue/joint bleeding</u> (hemarthroses), severe bleeding after trauma/procedure</div><div class="dxf test"><span class="dxl">Lab pattern</span><strong><u>Isolated prolonged PTT</u></strong>, normal PT, normal platelet count</div><div class="dxf tx"><span class="dxl">Treatment</span><strong>Replace the deficient factor</strong> (factor VIII or IX concentrate) — do this <u>before</u> any invasive procedure/imaging delay in suspected severe deficiency with acute bleeding</div><div class="dxf"><span class="dxl">Second-order</span>Platelet count and PT are usually normal; treat significant bleeding with <strong>specific factor replacement</strong> (and DDAVP in selected mild hemophilia A).</div></div>
 <table>
 <tbody><tr><th></th><th>Hemophilia</th><th>von Willebrand disease</th><th>Platelet disorder</th></tr>
 <tr><td>Bleeding pattern</td><td><strong><u>Deep tissue/joint</u></strong> (hemarthroses)</td><td><u>Mucosal/mucocutaneous</u> (epistaxis, gum bleeding, menorrhagia)</td><td><u>Mucosal/mucocutaneous</u>, petechiae</td></tr>
@@ -1976,18 +1850,11 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-blue"></span>Skin Emergencies <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Necrotizing fasciitis</div><div class="dxf"><span class="dxl">Mechanism / why</span>Rapid infection along deep fascia causes toxin-mediated injury, microvascular thrombosis, and tissue necrosis.</div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Pain out of proportion, systemic toxicity, bullae/crepitus, rapid progression</u></strong> → immediate surgical exploration; antibiotics alone are inadequate.</div>
-<div class="dxf"><span class="dxl">Stem clues / setup — vulnerable populations</span><strong>Diabetes, immunocompromise, IVDU, recent trauma/surgery</strong> at the site; can arise from a seemingly minor skin break</div>
-<div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Pain out of proportion</u></strong> to exam, crepitus, rapid spread, systemic toxicity — <u>bullae/skin necrosis are late findings</u></div>
-<div class="dxf test"><span class="dxl">Best test</span><strong>Clinical diagnosis + surgical exploration</strong> — imaging (CT/MRI showing gas/fascial thickening) only if it won't delay the OR</div>
-<div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Emergent surgical debridement</u></strong> + broad-spectrum abx (vanc + piperacillin-tazobactam + clindamycin for toxin suppression)</div>
-</div>
+<div class="dxcard-name">Necrotizing fasciitis</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Rapid infection along deep fascia causes toxin-mediated injury, microvascular thrombosis, and tissue necrosis.</div><div class="dxf"><span class="dxl">Stem clues / setup — vulnerable populations</span><strong>Diabetes, immunocompromise, IVDU, recent trauma/surgery</strong> at the site; can arise from a seemingly minor skin break</div><div class="dxf warn"><span class="dxl">Recognize</span><strong><u>Pain out of proportion</u></strong> to exam, crepitus, rapid spread, systemic toxicity — <u>bullae/skin necrosis are late findings</u></div><div class="dxf stab"><span class="dxl">Best initial step</span><strong><u>Emergent surgical debridement</u></strong> + broad-spectrum abx (vanc + piperacillin-tazobactam + clindamycin for toxin suppression)</div><div class="dxf test"><span class="dxl">Best test</span><strong>Clinical diagnosis + surgical exploration</strong> — imaging (CT/MRI showing gas/fascial thickening) only if it won't delay the OR</div><div class="dxf"><span class="dxl">Second-order</span><strong><u>Pain out of proportion, systemic toxicity, bullae/crepitus, rapid progression</u></strong> → immediate surgical exploration; antibiotics alone are inadequate.</div></div>
 <div class="dxcard">
-<div class="dxcard-name">SJS/TEN</div><div class="dxf"><span class="dxl">Mechanism / why</span>Severe drug-triggered cytotoxic immune reaction → <strong>keratinocyte apoptosis and epidermal necrosis</strong>.</div><div class="dxf"><span class="dxl">Second-order</span>Mucosal involvement + skin pain + epidermal detachment are key; <strong>stop the culprit drug</strong> and manage like a major skin-failure/burn patient.</div>
-<div class="dxf warn"><span class="dxl">Recognize</span><strong>Mucosal involvement</strong> + skin sloughing, positive <u>Nikolsky sign</u>; classic triggers sulfa, anticonvulsants, allopurinol</div>
-<div class="dxf warn"><span class="dxl">Best initial step</span><strong><u>Stop the offending drug immediately</u></strong> — the single highest-yield action</div>
-<div class="dxf tx"><span class="dxl">Management</span>Burn-unit-level supportive care; BSA involved defines severity (see table below)</div>
-</div>
+<div class="dxcard-name">SJS/TEN</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Severe drug-triggered cytotoxic immune reaction → <strong>keratinocyte apoptosis and epidermal necrosis</strong>.</div><div class="dxf warn"><span class="dxl">Recognize</span><strong>Mucosal involvement</strong> + skin sloughing, positive <u>Nikolsky sign</u>; classic triggers sulfa, anticonvulsants<span class="drug-ex"> (e.g., levetiracetam, valproate, phenytoin)</span>, allopurinol</div><div class="dxf warn"><span class="dxl">Best initial step</span><strong><u>Stop the offending drug immediately</u></strong> — the single highest-yield action</div><div class="dxf tx"><span class="dxl">Management</span>Burn-unit-level supportive care; BSA involved defines severity (see table below)</div><div class="dxf"><span class="dxl">Second-order</span>Mucosal involvement + skin pain + epidermal detachment are key; <strong>stop the culprit drug</strong> and manage like a major skin-failure/burn patient.</div></div>
 <table>
 <tbody><tr><th>Dx</th><th>Key features</th><th>Management</th></tr>
 <tr><td>Cellulitis</td><td><strong>Diffuse, poorly demarcated</strong> erythema/warmth/tenderness; <u>no fluctuance</u></td><td>Antibiotic active against streptococci ± MSSA; outpatient if no systemic instability</td></tr><tr><td>Erysipelas</td><td><strong><u>Bright red, raised, sharply demarcated</u></strong> superficial infection; usually streptococcal</td><td>Beta-lactam active against streptococci</td></tr><tr><td>Abscess</td><td><strong><u>Fluctuant</u></strong>, tender localized collection</td><td><strong>I&amp;D is definitive</strong>; add antibiotics for systemic illness/high-risk features</td></tr><tr><td>Necrotizing infection</td><td><strong><u>Pain out of proportion</u></strong>, rapid progression, toxicity ± crepitus/bullae</td><td><strong><u>Immediate surgical consultation/debridement</u></strong> + broad IV antibiotics</td></tr></tbody></table>
@@ -2034,25 +1901,14 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-teal"></span>Vision-Threatening Ophtho Emergencies <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <div class="dxcard">
-<div class="dxcard-name">Acute angle-closure glaucoma</div><div class="dxf"><span class="dxl">Mechanism / why</span>Peripheral iris obstructs trabecular outflow → abrupt <strong>IOP elevation</strong> and optic-nerve ischemia.</div><div class="dxf"><span class="dxl">Second-order</span><u>Mid-dilated fixed pupil + halos + nausea/vomiting</u> distinguish it from conjunctivitis; definitive treatment is laser iridotomy.</div>
-<div class="dxf warn"><span class="dxl">Recognize</span>Painful red eye, <strong><strong><u>mid-dilated fixed pupil</u></strong></strong>, halos around lights, ↑IOP</div>
-<div class="dxf tx"><span class="dxl">Best initial step</span><strong>Timolol, acetazolamide, pilocarpine</strong></div>
-<div class="dxf tx"><span class="dxl">Definitive treatment</span><u>Emergent laser iridotomy</u></div>
-<div class="dxf warn"><span class="dxl">Contraindication</span><strong><u>Avoid mydriatics/anticholinergics</u></strong> (dilating drops, antihistamines, some antidepressants) — can precipitate or worsen an attack by pushing the iris into the angle</div>
-<div class="dxf"><span class="dxl">Complication to anticipate</span><strong>Permanent vision loss</strong> if IOP not urgently controlled</div>
-</div>
+<div class="dxcard-name">Acute angle-closure glaucoma</div>
+<div class="dxf"><span class="dxl">Mechanism / why</span>Peripheral iris obstructs trabecular outflow → abrupt <strong>IOP elevation</strong> and optic-nerve ischemia.</div><div class="dxf warn"><span class="dxl">Recognize</span>Painful red eye, <strong><strong><u>mid-dilated fixed pupil</u></strong></strong>, halos around lights, ↑IOP</div><div class="dxf tx"><span class="dxl">Best initial step</span><strong>Timolol, acetazolamide, pilocarpine</strong></div><div class="dxf tx"><span class="dxl">Definitive treatment</span><u>Emergent laser iridotomy</u></div><div class="dxf"><span class="dxl">Second-order</span><u>Mid-dilated fixed pupil + halos + nausea/vomiting</u> distinguish it from conjunctivitis; definitive treatment is laser iridotomy.</div><div class="dxf"><span class="dxl">Complication to anticipate</span><strong>Permanent vision loss</strong> if IOP not urgently controlled</div><div class="dxf warn"><span class="dxl">Contraindication</span><strong><u>Avoid mydriatics/anticholinergics<span class="drug-ex"> (e.g., diphenhydramine, atropine, scopolamine)</span></u></strong> (dilating drops, antihistamines, some antidepressants) — can precipitate or worsen an attack by pushing the iris into the angle</div></div>
 <div class="dxcard">
 <div class="dxcard-name">Globe rupture</div>
-<div class="dxf warn"><span class="dxl">Recognize</span>Peaked/teardrop pupil; <strong>Seidel sign</strong><span class="eponym"> — fluorescein dye streams away from the leak site, revealing where aqueous humor is escaping</span>; decreased vision, extrusion/prolapse of ocular contents</div>
-<div class="dxf warn"><span class="dxl">Do NOT</span><strong><u>Avoid any pressure on the globe</u></strong> — no tonometry (IOP measurement is contraindicated), no forcing the lids open</div>
-<div class="dxf tx"><span class="dxl">Best initial step</span>Rigid eye shield, emergent ophtho</div>
-</div>
+<div class="dxf warn"><span class="dxl">Recognize</span>Peaked/teardrop pupil; <strong>Seidel sign</strong><span class="eponym"> — fluorescein dye streams away from the leak site, revealing where aqueous humor is escaping</span>; decreased vision, extrusion/prolapse of ocular contents</div><div class="dxf tx"><span class="dxl">Best initial step</span>Rigid eye shield, emergent ophtho</div><div class="dxf warn"><span class="dxl">Do NOT</span><strong><u>Avoid any pressure on the globe</u></strong> — no tonometry (IOP measurement is contraindicated), no forcing the lids open</div></div>
 <div class="dxcard">
 <div class="dxcard-name">Traumatic hyphema</div>
-<div class="dxf"><span class="dxl">Recognize</span><strong>Blood in the anterior chamber</strong> after blunt trauma; pain, photophobia, ± visible layering blood on exam</div>
-<div class="dxf warn"><span class="dxl">Complication to anticipate</span><strong><u>Elevated IOP and rebleeding</u></strong> (rebleeding typically days 2-5, often worse than initial bleed)</div>
-<div class="dxf tx"><span class="dxl">Management</span>Elevate head of bed 30-45°, eye shield, <u>limit activity</u>, ophtho follow-up; treat elevated IOP if present; <strong>avoid NSAIDs/aspirin</strong> (bleeding risk)</div>
-</div>
+<div class="dxf"><span class="dxl">Recognize</span><strong>Blood in the anterior chamber</strong> after blunt trauma; pain, photophobia, ± visible layering blood on exam</div><div class="dxf tx"><span class="dxl">Management</span>Elevate head of bed 30-45°, eye shield, <u>limit activity</u>, ophtho follow-up; treat elevated IOP if present; <strong>avoid NSAIDs/aspirin</strong> (bleeding risk)</div><div class="dxf warn"><span class="dxl">Complication to anticipate</span><strong><u>Elevated IOP and rebleeding</u></strong> (rebleeding typically days 2-5, often worse than initial bleed)</div></div>
 <div class="dxcard">
 <div class="dxcard-name">Orbital compartment syndrome</div>
 <div class="dxf warn"><span class="dxl">Recognize</span>Retrobulbar hemorrhage → <strong>proptosis + ↑IOP + afferent pupillary defect</strong> — vision-threatening emergency, IOP measurement IS indicated here (unlike globe rupture)</div>
@@ -2081,7 +1937,7 @@
 <tbody><tr><th></th><th>Open-angle</th><th>Closed-angle (acute)</th></tr>
 <tr><td>Onset</td><td><u>Chronic, painless, gradual peripheral vision loss</u></td><td><strong><u>Acute, painful, sudden</u></strong></td></tr>
 <tr><td>Mechanism</td><td>Slowly reduced aqueous outflow through trabecular meshwork</td><td>Iris blocks the anterior chamber angle abruptly</td></tr>
-<tr><td>Tx</td><td>Topical prostaglandin analogs (latanoprost), beta blockers — outpatient</td><td>Emergency — timolol/acetazolamide/pilocarpine, laser iridotomy</td></tr>
+<tr><td>Tx</td><td>Topical prostaglandin analogs (latanoprost), beta blockers<span class="drug-ex"> (e.g., metoprolol, propranolol, labetalol)</span> — outpatient</td><td>Emergency — timolol/acetazolamide/pilocarpine, laser iridotomy</td></tr>
 </tbody></table>
 <div class="sub">Conjunctivitis — bacterial vs viral vs allergic</div>
 <table>
@@ -2097,7 +1953,7 @@
 <table>
 <tbody><tr><th>Dx</th><th>Key features</th><th>Management</th></tr>
 <tr><td>Otitis media</td><td>Ear pain, bulging/erythematous TM, fever (kids); S. pneumoniae, H. flu, M. catarrhalis</td><td>Amoxicillin (high-dose) if bacterial criteria met; many resolve without abx (watchful waiting in select low-risk kids)</td></tr>
-<tr><td>Pharyngitis</td><td>Sore throat ± fever/exudate; group A strep vs viral — <strong>Centor criteria</strong><span class="eponym"> — fever, tonsillar exudate, tender anterior nodes, no cough; higher score = more likely strep</span> guide testing</td><td>Penicillin/amoxicillin if strep positive; supportive if viral</td></tr>
+<tr><td>Pharyngitis</td><td>Sore throat ± fever/exudate; group A strep vs viral — <strong>Centor criteria</strong><span class="eponym"> — fever, tonsillar exudate, tender anterior nodes, no cough; higher score = more likely strep</span> guide testing</td><td>Penicillin/amoxicillin if strep positive; supportive if viral</td></tr><tr><td><strong>EBV infectious mononucleosis</strong></td><td>Teen/young adult with fever, marked fatigue, exudative pharyngitis, <strong><u>posterior cervical LAD</u></strong> ± splenomegaly; atypical lymphocytes</td><td>Supportive care; avoid contact sports while splenic enlargement risk persists. <strong><u>Ampicillin/amoxicillin commonly causes a rash</u></strong> in EBV mono.</td></tr><tr><td><strong>Diphtheria</strong></td><td>Un/under-immunized or exposure/travel risk + sore throat, low fever, cervical swelling (“bull neck”), <strong><u>adherent gray pseudomembrane</u></strong></td><td><strong><u>Do not wait for confirmation</u></strong>: airway/isolation + diphtheria antitoxin + erythromycin or penicillin; notify public health. Watch for <strong>myocarditis/neuritis</strong>.</td></tr><tr><td><strong>Epiglottitis</strong></td><td><strong>Drooling, dysphagia, muffled voice, tripod positioning</strong> ± stridor; toxic appearance</td><td><strong><u>Airway first; do not agitate or force a throat exam</u></strong>; controlled airway + IV antibiotics</td></tr><tr><td><strong>Bacterial tracheitis</strong></td><td>Usually child; high fever/toxic appearance + stridor/croup-like cough that <strong>does not improve with epinephrine/steroids</strong>; thick purulent secretions</td><td>Airway support (often intubation) + IV broad antibiotics; ENT/peds involvement</td></tr>
 <tr><td>Sinusitis</td><td>Facial pressure, purulent discharge, &gt;10 days or biphasic worsening suggests bacterial</td><td>Supportive first-line; amoxicillin-clavulanate if bacterial criteria met</td></tr>
 <tr><td><strong>Peritonsillar abscess (PTA)</strong></td><td>Usually adolescent/young adult; unilateral severe sore throat, <strong><u>trismus + “hot potato” voice + uvula deviated away</u></strong>; drooling/odynophagia</td><td><strong>Drainage (needle aspiration/I&amp;D) + antibiotics</strong> covering GAS + oral anaerobes (e.g., amox-clav or ampicillin-sulbactam); secure airway/ENT if threatened</td></tr>
 <tr><td><strong>Retropharyngeal abscess (RPA)</strong></td><td><strong>Young child (classically &lt;5)</strong>; fever, toxic appearance, <u>neck stiffness/torticollis or refusal to extend neck</u>, drooling/muffled voice; posterior pharyngeal bulge may be subtle. <strong><u>No classic trismus/uvular deviation</u></strong> like PTA.</td><td><strong>Airway vigilance first</strong> → CT neck with IV contrast if stable + ENT + IV broad antibiotics; surgical drainage if large, airway-compromising, or not responding</td></tr>
@@ -2215,8 +2071,8 @@
 <!-- ====== SHOCK ====== -->
 <div class="sec" id="pharm">
 <div class="sec-title">Pharmacology &amp; Antibiotics <span class="weight-badge">cross-cutting</span></div>
-<p class="sec-desc">Built for rapid retrieval: <strong>mechanism → coverage anchor → classic ED uses → one board trap.</strong> Use this with the syndrome-specific antibiotic choices in each system tab.</p>
-<div class="card">
+<p class="sec-desc">Built for rapid retrieval: <strong>mechanism → coverage anchor → classic ED uses → one board trap.</strong> Use this with the syndrome-specific antibiotic choices in each system tab.</p><div class="kp"><span class="kp-label">Drug-class recognition rule</span>When a drug class is testable, this guide now gives a few <strong>board-recognizable examples in parentheses</strong> (for example, TCAs: amitriptyline/nortriptyline; antipsychotics: haloperidol/risperidone/olanzapine) so you can map the class name to an actual medication.</div>
+<div class="kp"><span class="kp-label">How to use the examples</span><strong>Drug-class examples are recognition anchors, not exhaustive lists.</strong> When a stem names a class such as a TCA, beta blocker, CCB, SSRI/SNRI, or antipsychotic, associate it with 2–3 canonical drugs so the class is immediately recognizable.</div><div class="card">
 <div class="card-title"><span class="dot dot-blue"></span>Antibiotic MOA &amp; Coverage Anchors <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <table><tbody><tr><th>Class / examples</th><th>MOA</th><th>High-yield coverage / common ED uses</th><th>Trap / adverse effect</th></tr>
 <tr><td><strong>Penicillins</strong><br/>penicillin, amoxicillin</td><td><strong>β-lactam → inhibits PBPs/transpeptidation → cell-wall synthesis</strong></td><td>Streptococci; syphilis (penicillin G); amoxicillin for strep pharyngitis/otitis in appropriate patients</td><td>Allergy; resistance often via β-lactamase</td></tr>
@@ -2435,11 +2291,11 @@
 <div class="card">
 <div class="card-title"><span class="dot dot-violet"></span>Contraindications &amp; Dangerous Medications <span class="tag tag-vhy">VERY HIGH YIELD</span></div>
 <ul>
-<li><strong>Right-sided MI:</strong> <u>avoid nitrates, diuretics, opioids</u> — they crash preload-dependent RV output. Treat with IV fluids.</li>
+<li><strong>Right-sided MI:</strong> <u>avoid nitrates, diuretics, opioids<span class="drug-ex"> (e.g., morphine, oxycodone, fentanyl)</span></u> — they crash preload-dependent RV output. Treat with IV fluids.</li>
 <li><strong>3rd degree heart block:</strong> <u>atropine is usually ineffective</u> (escape rhythm is ventricular, distal to the AV node) — go to pacing.</li>
 <li><strong>Pheochromocytoma / cocaine toxicity:</strong> <u>never give a beta blocker first</u> — unopposed alpha causes a hypertensive emergency. Alpha-block first.</li>
 <li><strong>Acute ischemic stroke:</strong> <u>do NOT aggressively lower BP</u> (permissive hypertension preserves the penumbra) — the opposite rule applies in hemorrhagic stroke.</li>
-<li><strong>Myasthenic crisis:</strong> avoid aminoglycosides, beta blockers, and magnesium — they worsen neuromuscular transmission.</li>
+<li><strong>Myasthenic crisis:</strong> avoid aminoglycosides, beta blockers<span class="drug-ex"> (e.g., metoprolol, propranolol, labetalol)</span>, and magnesium — they worsen neuromuscular transmission.</li>
 </ul>
 </div>
 <div class="card">
@@ -2488,44 +2344,8 @@
 <!-- ====== RAPID REVIEW ====== -->
 <div class="sec" id="rapid">
 <div class="sec-title">Rapid Review <span class="weight-badge">day-before compilation</span></div>
-<p class="sec-desc">Every board trap, mnemonic, classic triad/sign, and Qbank-depth pearl from the guide above, pulled into one place for a final pass. Not a substitute for the full sections — a last-minute refresher.</p>
-<div class="card">
-<div class="card-title"><span class="dot dot-rose"></span>Board Traps — the classic ways this exam tries to trick you <span class="tag tag-trap">HIGH YIELD</span></div>
-<ul>
-<li><strong>"Unstable, what's next?"</strong> is <u>never another scan</u> — it's an intervention (decompress, transfuse, intubate, OR).</li>
-<li><strong>Right-sided MI:</strong> <u>avoid nitrates, diuretics, opioids</u> — they crash preload-dependent RV output. Treat with IV fluids.</li>
-<li><strong>3rd degree heart block:</strong> <u>atropine is usually ineffective</u> (escape rhythm is ventricular, distal to the AV node) — go to pacing.</li>
-<li><strong>Rigid, "quiet," board-like abdomen</strong> = peritonitis until proven otherwise — <u>surgery now, not more labs</u>.</li>
-<li><strong>Strangulated vs incarcerated hernia:</strong> strangulation (vascular compromise) is a surgical emergency — <u>don't attempt manual reduction if ischemia/peritonitis signs present</u>.</li>
-<li><strong>FAST does NOT reliably detect retroperitoneal bleeding</strong> (pelvic fracture, renal injury) — <u>a negative FAST doesn't rule out major hemorrhage there</u>.</li>
-<li><strong>Hypotension is a LATE finding</strong> in hemorrhage (typically Class III+, &gt;30% blood loss) — <u>tachycardia/anxiety come first</u>.</li>
-<li><strong>Neurogenic shock</strong> = hypotension + <u>bradycardia</u> + warm skin. <strong>Hemorrhagic shock</strong> = hypotension + <u>tachycardia</u> + cool skin. Don't mix these up.</li>
-<li><strong>Blunt aortic injury survivors</strong> have a contained rupture — <u>treat vitals gently (esmolol first)</u> to avoid converting to a free rupture.</li>
-<li><strong><u>Warm, well-perfused extremities + hypotension</u></strong> = distributive shock (sepsis/anaphylaxis/neurogenic/adrenal crisis) almost every time.</li>
-<li><strong>Acute ischemic stroke:</strong> <u>do NOT aggressively lower BP</u> (permissive hypertension preserves the penumbra) — the opposite rule applies in hemorrhagic stroke.</li>
-<li><strong>Testicular torsion</strong> is a clinical diagnosis — <u>don't delay surgery for ultrasound if suspicion is high</u>.</li>
-<li><strong>New breast mass &gt;30-35y, or bloody nipple discharge at any age</strong> — <u>needs imaging, don't dismiss as fibroadenoma</u>.</li>
-<li><strong><u>Insulin in DKA is never started before you know the potassium</u></strong> — hypokalemic patients risk fatal arrhythmia as K+ shifts intracellularly.</li>
-<li><strong>Pheochromocytoma / cocaine toxicity:</strong> <u>never give a beta blocker first</u> — unopposed alpha causes a hypertensive emergency. Alpha-block first.</li>
-<li><strong>Pulse ox is falsely normal</strong> in both CO poisoning and methemoglobinemia — <u>need co-oximetry to catch these</u>.</li>
-<li><strong>Hypertensive (flash) pulmonary edema</strong> is an afterload problem, not volume overload — <u>nitrates/BiPAP first-line, not aggressive diuresis alone</u>.</li>
-<li><strong>Epiglottitis / pediatric airway foreign body:</strong> <u>never agitate the child or force a throat exam</u> — can precipitate complete obstruction.</li>
-<li><strong>Chemical eye burn:</strong> <u>irrigate FIRST</u>, before checking visual acuity or asking detailed history.</li>
-<li><strong>Compartment syndrome:</strong> pulselessness is a LATE finding — <u>pain out of proportion and pain with passive stretch come first</u>. Don't wait for the pulse to disappear to act.</li>
-<li><strong>WPW + AFib</strong> (irregular, very rapid, wide-complex) → <strong><u>AV nodal blockers can precipitate VF</u></strong> — use procainamide/ibutilide or cardioversion instead.</li>
-<li><strong>"No contraindications" isn't an answer</strong> — know the real absolute contraindications to thrombolysis (prior ICH, recent stroke/surgery/bleed, suspected dissection, uncontrolled severe HTN).</li>
-<li><strong>Major bleeding on anticoagulation</strong> → <u>reverse the SPECIFIC agent</u> — don't reflexively give FFP for everything.</li>
-<li><strong>Thyroid storm:</strong> <u>iodine comes AFTER a thionamide</u>, never before — reversing the order worsens thyrotoxicosis.</li>
-<li><strong>TTP:</strong> <u>avoid platelet transfusion</u> unless life-threatening bleeding — can worsen microthrombosis; start plasma exchange.</li>
-<li><strong>Ectopic pregnancy:</strong> stable + criteria met → methotrexate; <u>unstable/ruptured or MTX-contraindicated → surgery</u>, not medical management.</li>
-<li><strong>Meningitis with herniation risk</strong> → <u>antibiotics before CT, CT before LP</u> — never delay antibiotics for imaging.</li>
-<li><strong>Malignant hyperthermia:</strong> rapidly rising end-tidal CO2 + rigidity after anesthesia (succinylcholine/volatile agents) → <strong><u>stop the trigger, give dantrolene</u></strong> — don't wait for extreme fever.</li>
-<li><strong>Boerhaave:</strong> forceful vomiting + severe chest pain + subQ emphysema → <strong><u>water-soluble contrast esophagram</u></strong> (not barium) → urgent surgical management.</li>
-<li><strong>Chronic hyponatremia</strong> → <u>avoid rapid correction</u> — risk of osmotic demyelination syndrome. <strong>Chronic hypernatremia</strong> → <u>avoid rapid correction</u> — risk of cerebral edema.</li>
-<li><strong>Appendicitis imaging:</strong> <u>CT first-line in nonpregnant adults</u>; ultrasound first-line in pregnancy/pediatrics to avoid radiation — not a universal "ultrasound first" rule.</li>
-</ul>
-</div>
-<div class="card">
+<p class="sec-desc">Fast retrieval only: mnemonics + a compact index to the primary system tabs. Detailed disease content lives in its main tab so search results stay cleaner.</p>
+<div class="kp teal"><span class="kp-label">How to use Rapid Review</span>This tab is now limited to <strong>mnemonics, classic associations, and qbank-depth pearls</strong>. Contraindications and classic mistakes are consolidated in the dedicated <strong>Board Traps</strong> tab to reduce duplicate search results.</div><div class="card">
 <div class="card-title"><span class="dot dot-violet"></span>Mnemonics — compiled</div>
 <div class="mnem"><div class="mnem-title">H's and T's — ACLS reversible causes</div><b>H's:</b> Hypovolemia, Hypoxia, Hydrogen ion (acidosis), Hypo/Hyperkalemia, Hypothermia  |  <b>T's:</b> Tension PTX, Tamponade, Toxins, Thrombosis (PE/MI)</div>
 <div class="mnem"><div class="mnem-title">CHESS — San Francisco Syncope Rule</div><strong>C</strong>HF history, <strong>H</strong>ematocrit &lt;30%, abnormal <strong>E</strong>KG, <strong>S</strong>hortness of breath, <strong>S</strong>ystolic BP &lt;90 at triage — any one positive predicts higher-risk short-term outcome.</div>
@@ -2538,99 +2358,10 @@
 <div class="mnem"><div class="mnem-title">DUMBELS / SLUDGE — cholinergic toxidrome</div>Diarrhea, Urination, Miosis, Bradycardia/Bronchorrhea, Emesis, Lacrimation, Salivation (Fasciculations) — tx atropine + pralidoxime</div>
 <div class="mnem"><div class="mnem-title">6 P's — limb ischemia / compartment syndrome</div>Pain (out of proportion, earliest), Pallor, Paresthesia, Poikilothermia, Pulselessness (late), Paralysis (late)</div>
 <div class="mnem"><div class="mnem-title">Anticoagulant reversal — match the agent</div><strong>Warfarin</strong> → vitamin K + PCC • <strong>Dabigatran</strong> → idarucizumab • <strong>Factor Xa inhibitors</strong> → andexanet alfa • <strong>Heparin</strong> → protamine</div>
-<div class="mnem"><div class="mnem-title">Alcohol withdrawal timeline</div>Tremor/anxiety (6-24h) → seizures (12-48h) → delirium tremens (48-96h) — benzodiazepines first-line; thiamine before/with glucose in at-risk patients.</div>
-</div>
-<div class="card">
-<div class="card-title"><span class="dot dot-teal"></span>Classic Triads, Signs &amp; Buzzword Associations</div>
-<table>
-<tbody><tr><th>Buzzword / finding</th><th>Points to</th></tr>
-<tr><td>Beck triad (hypotension, JVD, muffled heart sounds)</td><td>Cardiac tamponade</td></tr>
-<tr><td>Charcot triad (fever, jaundice, RUQ pain)</td><td>Ascending cholangitis</td></tr>
-<tr><td>Reynolds pentad (Charcot triad + AMS + hypotension)</td><td>Suppurative cholangitis — more severe</td></tr>
-<tr><td>Cushing triad (HTN, bradycardia, irregular respirations)</td><td>Tonsillar herniation / rising ICP — impending respiratory arrest</td></tr>
-<tr><td>Battle sign, raccoon eyes, hemotympanum, CSF oto/rhinorrhea (halo sign on gauze)</td><td>Basilar skull fracture</td></tr>
-<tr><td><strong>"Coffee bean sign"</strong> (dilated loop folds on itself) on abdominal XR</td><td>Sigmoid volvulus</td></tr>
-<tr><td><strong>Murphy sign</strong> (pain/inspiratory arrest on RUQ palpation), "4 F's" (female, forty, fertile, fat)</td><td>Acute cholecystitis</td></tr>
-<tr><td>Classic triad: hypotension, abdominal/back pain, pulsatile mass</td><td>Ruptured AAA</td></tr>
-<tr><td>Thumbprint sign, tripod position, drooling, muffled voice</td><td>Epiglottitis</td></tr>
-<tr><td><strong>"Light bulb sign"</strong> (humeral head looks rounded/symmetric on AP XR) on shoulder XR</td><td>Posterior shoulder dislocation (classically post-seizure or electrical shock)</td></tr>
-<tr><td><strong>Seidel sign</strong> (fluorescein dye streams from the leak site), peaked/irregular pupil</td><td>Globe rupture</td></tr>
-<tr><td>Cherry-red spot, retinal pallor</td><td>Central retinal artery occlusion</td></tr>
-<tr><td>"Blood and thunder" fundus (flame hemorrhages, disk edema)</td><td>Central retinal vein occlusion</td></tr>
-<tr><td>Triad: hypoxemia, neurologic changes, petechial rash (axilla/chest/conjunctiva)</td><td>Fat embolism syndrome (long bone fracture)</td></tr>
-<tr><td>Compulsive hot showers/bathing relieving cyclic vomiting</td><td>Cannabinoid hyperemesis syndrome</td></tr>
-<tr><td>Widened mediastinum, obliterated aortic knob, tracheal/NGT deviation right</td><td>Blunt (traumatic) aortic injury</td></tr>
-<tr><td>"Waiter's tip" arm posture</td><td>Erb palsy (C5-C6 brachial plexus injury)</td></tr>
-<tr><td>Saddle anesthesia + bowel/bladder dysfunction + bilateral leg weakness</td><td>Cauda equina syndrome — emergent MRI</td></tr>
-<tr><td>"Currant jelly" stool</td><td>Intussusception (pediatric)</td></tr>
-<tr><td>Pain out of proportion to exam</td><td>Acute mesenteric ischemia (or compartment syndrome in an extremity)</td></tr>
-<tr><td><strong>Mackler triad</strong> (vomiting + chest pain + subcutaneous emphysema — not always all three present)</td><td>Boerhaave syndrome — esophageal rupture, surgical emergency</td></tr>
-<tr><td>Kussmaul breathing, fruity breath</td><td>DKA</td></tr>
-<tr><td>Cherry-red skin, bitter almond breath</td><td>Cyanide poisoning (cherry-red is late/classically taught, often not clinically seen)</td></tr>
-<tr><td>"Mad as a hatter, red as a beet, dry as a bone, blind as a bat, hot as a hare"</td><td>Anticholinergic toxidrome</td></tr>
-<tr><td>Chocolate-brown blood, cyanosis unresponsive to O2</td><td>Methemoglobinemia — tx methylene blue (avoid in G6PD deficiency)</td></tr>
-</tbody></table>
-</div>
-<div class="card">
-<div class="card-title"><span class="dot dot-slate"></span>Qbank-Depth Pearls — compiled</div>
-<ul>
-<li><strong>Parkland formula:</strong> 2 mL x %TBSA x weight(kg) over first 24h for 2nd-degree+ burns (updated ATLS/ABA value; classic teaching says 4 mL/kg) — half over first 8h from time of injury, titrate to UOP ≥0.5 mL/kg/hr.</li>
-<li><strong>DKA management order:</strong> fluids first (isotonic saline ~1L/hr) → insulin (hold if K+&lt;3.3) → potassium repletion if ≤5.3 → bicarb only if pH&lt;6.9.</li>
-<li><strong>90% of blunt aortic injuries are fatal at the scene</strong> — rupture at the isthmus where the mobile arch meets the fixed descending aorta.</li>
-<li><strong>PERC rule</strong> only applies to patients already deemed low pretest probability for PE — all 8 criteria negative rules out PE without needing a D-dimer.</li>
-<li><strong>Cannabinoid hyperemesis syndrome:</strong> diagnosis of exclusion in chronic heavy cannabis users; cessation of use is the only definitive treatment.</li>
-<li><strong>Hyperkalemia framework:</strong> <u>stabilize</u> (calcium — protects the heart, doesn't lower K+) → <u>shift</u> (insulin/glucose, albuterol, bicarb) → <u>eliminate</u> (diuretics, kayexalate, dialysis).</li>
-<li><strong>Severe symptomatic hypocalcemia</strong> (tetany, seizures, prolonged QT) → <strong>IV calcium</strong>; check magnesium if refractory.</li>
-<li><strong>CO poisoning:</strong> house fire/enclosed generator/faulty heater + multiple household members with vague symptoms → <strong>co-oximetry</strong> (standard pulse ox is falsely normal) → 100% O2, hyperbaric if severe.</li>
-<li><strong>HEART score:</strong> 0-3 low risk (safe for discharge), 4-6 moderate (admit/observe), ≥7 high risk (admit, early invasive strategy) — components: History, EKG, Age, Risk factors, Troponin.</li>
-<li><strong>Ottawa ankle/knee rules:</strong> ankle — X-ray if malleolar tenderness + can't bear weight/bony tenderness at malleolar tip; knee — X-ray if age ≥55, patellar tenderness, fibular head tenderness, can't flex 90°, or can't bear weight.</li>
-<li><strong>TTP pentad (when present):</strong> thrombocytopenia + microangiopathic hemolytic anemia + fever + renal failure + neuro changes — emergent plasma exchange, avoid platelet transfusion.</li>
-<li><strong>Hemophilia lab pattern:</strong> isolated ↑PTT, normal PT, normal platelets, deep/joint bleeding — replace the specific factor.</li>
-<li><strong>Wallenberg (lateral medullary) syndrome:</strong> dysphagia + hoarseness + ipsilateral Horner + crossed sensory loss (ipsilateral face, contralateral body) — PICA/vertebral artery.</li>
-<li><strong>ICH by location:</strong> basal ganglia (most common, HTN) • pons (coma, pinpoint pupils) • cerebellum (vertigo/ataxia, risk of herniation) • lobar (consider amyloid angiopathy in elderly).</li>
-<li><strong>Massive hemoptysis:</strong> position the <u>bleeding lung dependent (down)</u> to protect the healthy lung — prioritize airway/oxygenation/hemodynamics over an arbitrary volume cutoff.</li>
-</ul>
+<div class="mnem"><div class="mnem-title">Alcohol withdrawal timeline</div>Tremor/anxiety (6-24h) → seizures (12-48h) → delirium tremens (48-96h) — benzodiazepines<span class="drug-ex"> (e.g., lorazepam, diazepam, midazolam)</span> first-line; thiamine before/with glucose in at-risk patients.</div>
 </div>
 <div class="objective">One-liner: if you only have 20 minutes left before the exam, read this tab — it's the highest-yield-per-minute page in the whole guide.</div>
-</div>
-<div class="sec" id="crampath">
-<div class="sec-title">3-Hour Cram Path <span class="weight-badge">how to use this guide the day of</span></div>
-<p class="sec-desc">This is not new content — it's a route through the guide, timed and prioritized for a real 3-hour final review.</p><div class="board-note"><strong>Expanded-reference strategy:</strong> The main guide is intentionally broader than the NBOME topic examples. In a true 3-hour cram, follow this tab path rather than trying to read every supporting-yield card.</div>
-<div class="card">
-<div class="card-title"><span class="dot dot-rose"></span>First 60 Minutes — Unstable Patient &amp; Management-Heavy Content <span class="tag tag-vhy">MUST REVIEW</span></div>
-<ul>
-<li><strong>Unstable Patient tab</strong> — the whole tab. This is the highest-density stabilization content in the guide.</li>
-<li><strong>Question Decoder</strong> — the phrase-to-task table and the 5-question checklist. Re-anchor how to read a stem before diving into content.</li>
-<li><strong>Shock tab</strong> — physiology-by-type table + obstructive shock comparison (tension PTX/tamponade/PE).</li>
-<li><strong>CV tab</strong> — STEMI/aortic dissection dxcards, anticoagulant reversal table, WPW+AFib trap.</li>
-<li><strong>Electrolyte Emergencies</strong> (GU tab) — hyperkalemia stabilize→shift→eliminate, sodium correction traps.</li>
-</ul>
-<p><span class="dxl" style="color:var(--dot-amber)">REVIEW IF TIME:</span> Endo tab thyroid storm/pheo sequencing. <span class="dxl" style="color:var(--text-muted)">SKIM ONLY:</span> vasopressor receptor table (recognition, not recall-heavy).</p>
-</div>
-<div class="card">
-<div class="card-title"><span class="dot dot-amber"></span>Next 60 Minutes — System-Based Diagnostic Discrimination <span class="tag tag-vhy">MUST REVIEW</span></div>
-<ul>
-<li><strong>Neuro tab</strong> — stroke dxcards (contraindications!), meningitis vs encephalitis, ICH localization table, headache red flags.</li>
-<li><strong>Resp tab</strong> — PE dxcard (massive vs submassive), pneumonia table, COPD/hypercapnia dxcard.</li>
-<li><strong>GI tab</strong> — appendicitis context-dependent imaging, mesenteric ischemia, biliary spectrum table, Boerhaave vs Mallory-Weiss.</li>
-<li><strong>GU tab</strong> — ectopic pregnancy (+ MTX contraindications), testicular torsion, UTI/pyelo/stone spectrum table.</li>
-<li><strong>Trauma tab</strong> — primary survey, E-FAST, shock classes, penetrating abdominal trauma branch.</li>
-</ul>
-<p><span class="dxl" style="color:var(--dot-amber)">REVIEW IF TIME:</span> HEENT ocular emergencies (hyphema/orbital compartment/optic neuritis vs GCA), MSK back-pain family. <span class="dxl" style="color:var(--text-muted)">SKIM ONLY:</span> conjunctivitis table, ENT infections table (lower differentiation burden).</p>
-</div>
-<div class="card">
-<div class="card-title"><span class="dot dot-teal"></span>Final 60 Minutes — Supporting-Yield Gaps, Traps, Pharm &amp; Procedures <span class="tag tag-vhy">MUST REVIEW</span></div>
-<ul>
-<li><strong>Board Traps tab</strong> — all cards, full read. This is your highest-density "avoid the classic mistake" content.</li>
-<li><strong>Rapid Review tab</strong> — all cards. This is the compressed version of everything above.</li>
-<li><strong>Pharm &amp; Antibiotics tab</strong> — MOA/coverage anchors + empiric syndrome table; then <strong>Physician Tasks tab</strong> — procedural/ED skills table.</li>
-<li><strong>Tox tab</strong> — toxidrome table, malignant hyperthermia, withdrawal syndromes.</li>
-<li><strong>Heme/Onc tab</strong> — hemophilia/vWD/platelet table, ITP/TTP/HIT/DIC.</li>
-</ul>
-<p><span class="dxl" style="color:var(--dot-amber)">REVIEW IF TIME:</span> Pediatrics tab (full pass if time) + Public Health tab (communicable disease / PEP). <span class="dxl" style="color:var(--text-muted)">SKIM ONLY / SKIP IF BEHIND SCHEDULE:</span> MSK ortho fracture-pattern tables, Integumentary dermatology table — these are recognition-heavy but low-differentiation-burden; a quick pass suffices.</p>
-</div>
-<div class="objective">One-liner: if you only have time for one lap, do Unstable Patient → Board Traps → Rapid Review — that sequence alone covers most fatal-error prevention in the guide.</div>
-</div>
+<div class="card"><div class="card-title"><span class="dot dot-blue"></span>Quick Jump Index <span class="tag tag-core">SEARCH / NAVIGATION</span></div><p class="rapid-note">Use this as a retrieval map. The full diagnosis/management content is consolidated in the primary tab listed below.</p><div class="quick-index"><button onclick="jumpTo('cv')" type="button"><strong>Cardiovascular</strong><br/>ACS • arrhythmias • WPW • PAD/claudication</button><button onclick="jumpTo('gi')" type="button"><strong>GI</strong><br/>pancreatitis • biliary disease • SBO/volvulus • GI bleed</button><button onclick="jumpTo('trauma')" type="button"><strong>Trauma</strong><br/>ATLS • pelvic/open-book injuries • head/spine • blast</button><button onclick="jumpTo('shock')" type="button"><strong>Shock/Resus</strong><br/>PEA/asystole • sepsis • hemorrhagic shock • CPR</button><button onclick="jumpTo('neuro')" type="button"><strong>Neuro</strong><br/>stroke/ICH • GBS • transverse myelitis • seizures</button><button onclick="jumpTo('resp')" type="button"><strong>Respiratory</strong><br/>PE • COPD/asthma • pneumonia • drowning</button><button onclick="jumpTo('gu')" type="button"><strong>GU/OB</strong><br/>stones/UTI • torsion • ectopic • PPH</button><button onclick="jumpTo('tox')" type="button"><strong>Tox/Environmental</strong><br/>toxidromes • heavy metals • bites/stings • hypothermia</button><button onclick="jumpTo('endo')" type="button"><strong>Endocrine</strong><br/>DKA/HHS • thyroid/adrenal • electrolyte emergencies</button><button onclick="jumpTo('msk')" type="button"><strong>MSK</strong><br/>fractures/dislocations • septic joint • compartment syndrome</button><button onclick="jumpTo('hemeonc')" type="button"><strong>Heme/Onc</strong><br/>TTP/DIC/HIT • sickle cell • neutropenic fever</button><button onclick="jumpTo('integ')" type="button"><strong>Integumentary</strong><br/>cellulitis/abscess • SJS/TEN • necrotizing infection</button><button onclick="jumpTo('heent')" type="button"><strong>HEENT</strong><br/>ocular emergencies • PTA/RPA • mono/diphtheria</button><button onclick="jumpTo('peds')" type="button"><strong>Pediatrics</strong><br/>fever • airway • GI emergencies • abuse</button><button onclick="jumpTo('pharm')" type="button"><strong>Pharmacology</strong><br/>MOA • antibiotic coverage • emergency drugs</button><button onclick="jumpTo('traps')" type="button"><strong>Board Traps</strong><br/>contraindications • classic mistakes • sequencing</button></div></div></div>
 </main>
 <script>
 function show(id, btn) {
@@ -2639,6 +2370,13 @@ function show(id, btn) {
   document.getElementById(id).classList.add('show');
   if (btn) btn.classList.add('on');
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function jumpTo(id) {
+  const btn = Array.from(document.querySelectorAll('.nb')).find(b => {
+    const onclick = b.getAttribute('onclick') || '';
+    return onclick.includes("show('" + id + "'") || onclick.includes('show("' + id + '"');
+  });
+  show(id, btn || null);
 }
 (function() {
   var navBar = document.querySelector('.nav-bar');
