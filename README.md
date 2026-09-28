@@ -1,40 +1,29 @@
 # EM COMAT Study Guide
 
-**35 new figures extracted from all three supplied textbooks, with diagnosis and key clues beside each image.** The two earlier attributed images remain, for 37 image assets total.
+Open `index.html` to study. The standalone guide has 23 tabs, 39 decision pathways, 160 expandable reference blocks and 37 local images, including 35 figures extracted from the three supplied textbooks.
 
-## Find the images
+## Find the material
 
-Open `index.html`. On Overview, use the **Version 11 · 35 new textbook figures** buttons to jump directly to a system gallery. The same **Textbook image gallery** appears near the top of each illustrated tab. Expand it to see the images and notes. Select an image to enlarge it; use its reference button to open the related diagnosis/management section.
-
-Galleries are grouped by system to preserve the existing layout and avoid loading every image into the reading path at once. Diagnoses and clues are visible beside each image, without an answer-reveal step. On narrow screens the explanation stacks below its image.
+- Search across all tabs or use the system tabs and expandable references.
+- Use Overview's image-gallery buttons for textbook figures with diagnosis and clues beside each image.
+- Use **Sources / scope → Concept Coverage Map** for direct links to all 33 screenshot-audit entries.
+- Bold identifies key answers; underlining identifies discriminating clues; bold red marks critical actions or traps.
 
 ## Upload to GitHub
 
 1. Extract `EM_COMAT_Study_Guide_GitHub.zip`.
-2. Replace `index.html` and upload the complete `images` folder, including its new `textbooks` subfolder.
-3. Include `README.md`, `CONTENT_AUDIT.md` and `IMAGE_SOURCES.md` alongside the HTML.
-4. Commit the extracted files and let the existing Pages deployment complete.
+2. Upload the extracted `index.html` and complete `images` folder at the same level in your existing GitHub Pages publishing folder.
+3. Include the README and the three audit/source documents alongside the HTML.
+4. Commit the files and let the existing Pages deployment complete.
 
-Do not upload only the HTML: the local image folders are required. No build or external script library is needed. The ZIP itself is not the home page. Local images work offline; external source links need internet access.
+Upload the extracted files, not the ZIP itself. Preserve `images/textbooks/`; uploading only the HTML will omit the images. No build step or external script library is required. External source links require internet access.
 
-## What changed
+## Audit and provenance
 
-- 10 figures from First Aid Step 2 CK 11e, 15 from Clinical Pattern Recognition, and 10 from Harrison 22e.
-- ECGs and conduction comparisons; chest and abdominal imaging; intracranial bleeding; pregnancy ultrasound; renal obstruction and urine sediment; fractures/crystals; retinal emergencies; zoster and spinal infection.
-- Every image has a diagnosis, visual clue, decision connection, source page/figure and recorded credit. Original arrows and labels are retained. No AI reconstruction or diagnostic retouching was used.
-- Added direct gallery navigation and links from images to the corresponding clinical reference.
-- Preserved the v10 clinical material, 152 numbered reference blocks, 39 pathways, all system tabs, search, emphasis and reference controls.
+`SCREENSHOT_CONCEPT_AUDIT.md` maps all screenshot concepts, corrections, evidence and scope. `CONTENT_AUDIT.md` records the earlier comprehensive content audit. `IMAGE_SOURCES.md` records the figure sources and extraction details.
 
-`IMAGE_SOURCES.md` records image provenance and extraction scope. `CONTENT_AUDIT.md` remains the v10 clinical audit; version 11 adds visual material rather than repeating the full medical audit.
+The user confirmed permission to publish the textbook figures. Credits remain attached; this does not create a new open license. Source PDFs, raw screenshots and private score reports/priorities are not packaged.
 
-## Scope and privacy
+## Verification
 
-The user confirmed permission to publish the extracted textbook figures. Figure credits are preserved in the guide/source ledger; this does not independently establish a new open license. Source PDFs and private score reports are not packaged. The separate private study-priorities file is also excluded.
-
-Images are selected for their educational value and the user's repair priorities, not a claim of measured NBOME image frequency. Some compressed textbook originals have limited resolution. A full-size view cannot recover details absent from the original.
-
-## Validation
-
-All 35 extracted crops were visually inspected against the source pages and captions. Automated testing checks original navigation/search behavior and the new galleries, image assets, source captions and reference links. All 42 existing behavior checks and 93 new image/gallery checks passed, with no runtime errors. Static checks also confirmed retained IDs, local image files, descriptive alt text and package privacy.
-
-Browser layout rendering has not been reverified because the local browser preview was previously blocked by security policy. Crop inspection and DOM checks do not substitute for browser visual/mobile inspection. No live GitHub repository or deployed site was changed.
+The 42 navigation/search and 93 gallery regression checks passed. All 37 image assets remain present. Additional structural and packaging checks cover new references and concept destinations. Browser visual/mobile rendering was not reverified because the local preview was previously blocked by security policy. No live GitHub repository or deployed site was changed.
