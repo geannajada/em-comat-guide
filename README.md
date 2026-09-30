@@ -6,8 +6,10 @@ Open `index.html` to study. The standalone guide has 23 tabs, 39 decision pathwa
 
 - Search across all tabs or use the system tabs and expandable references.
 - Use Overview's image-gallery buttons for textbook figures with diagnosis and clues beside each image.
-- Use **Sources / scope → Concept Coverage Map** for direct links to all 33 screenshot-audit entries.
+- Use **Sources / scope → Concept Coverage Map** for direct links to the earlier 33 screenshot-audit entries.
 - Bold identifies key answers and important diagnostic identifiers; underlining supports lower-priority details; bold red marks critical actions or traps.
+
+The latest question-block audit maps all **41 topics** from the screenshot headed “9/27 #2 40 Q’s”: see `QUESTION_BLOCK_2026-09-29_AUDIT.md`.
 
 ## Upload to GitHub
 
@@ -16,7 +18,7 @@ Open `index.html` to study. The standalone guide has 23 tabs, 39 decision pathwa
 3. Include the README and the audit/source documents alongside the HTML.
 4. Commit the files and let the existing Pages deployment complete.
 
-Upload the extracted files, not the ZIP itself. Preserve `images/textbooks/`; uploading only the HTML will omit the images. No build step or external script library is required. External source links require internet access.
+Upload the extracted files, not the ZIP itself. **For this update, replace `index.html`; the existing images do not need re-uploading if their folder is already present and unchanged.** For a first upload, include the complete `images` folder and preserve `images/textbooks/`. No build step or external script library is required. External source links require internet access.
 
 ## Audit and provenance
 
@@ -26,4 +28,4 @@ The user confirmed permission to publish the textbook figures. Credits remain at
 
 ## Verification
 
-All 445 regression checks and 28 targeted browser-comment checks passed. See `BROWSER_COMMENTS_AUDIT.md` for the latest changes. All 37 image assets remain present. Additional structural and packaging checks cover new references and concept destinations. Browser visual/mobile rendering was not reverified because the local preview was previously blocked by security policy. No live GitHub repository or deployed site was changed.
+The latest update passed **555 checks**: 453 regression checks and 102 targeted question-block coverage/navigation/search checks. See `QUESTION_BLOCK_2026-09-29_AUDIT.md` for coverage, corrections and verification scope. Earlier browser changes remain documented in `BROWSER_COMMENTS_AUDIT.md`. All 37 image assets remain present and unchanged. Browser visual/mobile rendering was not reverified because the local preview was previously blocked by security policy. No live GitHub repository or deployed site was changed.
